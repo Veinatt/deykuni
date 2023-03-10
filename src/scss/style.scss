@@ -32,18 +32,16 @@ a:focus {
 	color: #fff;
 }
 
-$clr-black: #0b0b0b;
+$c-black: #1A1A1A;
 $clr-orange: #F9651C;
 $clr-gray: #808080;
-$nm-bl: NeueMachina-Black;
-$nm-b: NeueMachina-Bold;
-$nm-m: NeueMachina-Medium;
-$nm-l: NeueMachina-Light;
-$nm-r: NeueMachina-Regular;
-$nm-ub: NeueMachina-Ultrabold;
+$f-b: NeueMachina-Bold;
+$f-m: NeueMachina-Medium;
+$f-l: NeueMachina-Light;
+$f-r: NeueMachina-Regular;
 
 %def-t {
-	font-family: $nm-l;
+	font-family: $f-l;
 	font-size: 20px;
 
 	@media (max-width:1400px) {
@@ -126,7 +124,7 @@ body {
 @import "footer.scss";
 
 .sec-title {
-	font-family: $nm-r;
+	font-family: $f-r;
 	text-transform: uppercase;
 	font-size: 60px;
 	pointer-events: none;
@@ -134,7 +132,7 @@ body {
 	margin-bottom: 40px;
 
 	span {
-		font-family: $nm-b;
+		font-family: $f-b;
 	}
 
 	@media (max-width:1400px) {
@@ -405,7 +403,7 @@ body {
 				margin-right: 20px;
 				margin-bottom: 20px;
 				@extend %def-t;
-				font-family: $nm-r;
+				font-family: $f-r;
 				opacity: 0;
 				transition: all .7s ease-in-out;
 				padding: 20px 30px;
@@ -527,11 +525,11 @@ body {
 
 				&>div:first-child {
 					font-size: 60px;
-					font-family: $nm-r;
+					font-family: $f-r;
 					color: #fff;
 
 					span {
-						font-family: $nm-b;
+						font-family: $f-b;
 					}
 
 					@media (max-width:1400px) {
@@ -545,7 +543,7 @@ body {
 
 				&>div:last-child {
 					font-size: 60px;
-					font-family: $nm-bl;
+					font-family: $f-bl;
 					-webkit-text-stroke: .5px rgba($color: #fff, $alpha: 0.4);
 					color: transparent;
 
@@ -649,7 +647,7 @@ body {
 		}
 
 		.text {
-			font-family: $nm-r;
+			font-family: $f-r;
 			width: 100%;
 			text-align: center;
 			color: #fff;
@@ -889,7 +887,7 @@ body {
 
 				.title {
 					padding-left: 20px;
-					font-family: $nm-m;
+					font-family: $f-m;
 					font-size: 36px;
 					margin-bottom: 20px;
 					position: relative;
@@ -1247,7 +1245,7 @@ body {
 
 	// .rate-text-abs {
 	// 	font-size: 160px;
-	// 	font-family: $nm-ub;
+	// 	font-family: $f-ub;
 	// 	-webkit-text-stroke: .5px rgba($color: #fff, $alpha: 0.4);
 	// 	color: transparent;
 	// 	position: absolute;
@@ -1351,7 +1349,7 @@ body {
 			padding: 30px;
 
 			.title {
-				font-family: $nm-r;
+				font-family: $f-r;
 				color: #fff;
 				font-size: 36px;
 				margin-bottom: 10px;
@@ -1366,7 +1364,7 @@ body {
 			}
 
 			.desc {
-				font-family: $nm-l;
+				font-family: $f-l;
 				color: $clr-gray;
 				font-size: 18px;
 				margin-bottom: 20px;
@@ -1391,7 +1389,7 @@ body {
 				}
 
 				.point {
-					font-family: $nm-l;
+					font-family: $f-l;
 					font-size: 18px;
 					margin-bottom: 10px;
 
@@ -1409,7 +1407,7 @@ body {
 			.price-cont {
 				display: flex;
 				flex-direction: column;
-				font-family: $nm-l;
+				font-family: $f-l;
 				font-size: 18px;
 				margin-bottom: 10px;
 				text-transform: lowercase;
@@ -1480,7 +1478,7 @@ body {
 				padding-left: 1em;
 			}
 
-			font-family: $nm-b;
+			font-family: $f-b;
 
 			span {
 				color: $clr-orange;
@@ -2046,7 +2044,7 @@ body {
 
 			.title {
 				display: inline-block;
-				font-family: $nm-bl;
+				font-family: $f-bl;
 				font-size: 38px;
 
 				@media (max-width:1400px) {
@@ -2067,7 +2065,7 @@ body {
 			}
 
 			.text {
-				font-family: $nm-r;
+				font-family: $f-r;
 				margin-bottom: 15px;
 			}
 
@@ -2121,7 +2119,7 @@ body {
 		}
 
 		.qu {
-			font-family: $nm-l;
+			font-family: $f-l;
 			color: $clr-orange;
 			font-size: 165px;
 			line-height: 1em;

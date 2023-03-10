@@ -1,42 +1,28 @@
 @font-face {
-	font-family: NeueMachina-Black;
+	font-family: MabryPro-Bold;
 	font-display: swap;
-	src: url("../fonts/NeueMachina-Black.woff2") format("woff2"), url("../fonts/NeueMachina-Black.woff") format("woff");
-	font-weight: 900;
-	font-style: normal;
-}
-@font-face {
-	font-family: NeueMachina-Bold;
-	font-display: swap;
-	src: url("../fonts/NeueMachina-Bold.woff2") format("woff2"), url("../fonts/NeueMachina-Bold.woff") format("woff");
+	src: url("../fonts/MabryPro-Bold.woff2") format("woff2"), url("../fonts/MabryPro-Bold.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
-	font-family: NeueMachina-Medium;
+	font-family: MabryPro-Medium;
 	font-display: swap;
-	src: url("../fonts/NeueMachina-Medium.woff2") format("woff2"), url("../fonts/NeueMachina-Medium.woff") format("woff");
+	src: url("../fonts/MabryPro-Medium.woff2") format("woff2"), url("../fonts/MabryPro-Medium.woff") format("woff");
 	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
-	font-family: NeueMachina-Light;
+	font-family: MabryPro-Light;
 	font-display: swap;
-	src: url("../fonts/NeueMachina-Light.woff2") format("woff2"), url("../fonts/NeueMachina-Light.woff") format("woff");
+	src: url("../fonts/MabryPro-Light.woff2") format("woff2"), url("../fonts/MabryPro-Light.woff") format("woff");
 	font-weight: 300;
 	font-style: normal;
 }
 @font-face {
-	font-family: NeueMachina-Regular;
+	font-family: MabryPro-Regular;
 	font-display: swap;
-	src: url("../fonts/NeueMachina-Regular.woff2") format("woff2"), url("../fonts/NeueMachina-Regular.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: NeueMachina-Ultrabold;
-	font-display: swap;
-	src: url("../fonts/NeueMachina-Ultrabold.woff2") format("woff2"), url("../fonts/NeueMachina-Ultrabold.woff") format("woff");
+	src: url("../fonts/MabryPro-Regular.woff2") format("woff2"), url("../fonts/MabryPro-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
