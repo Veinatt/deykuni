@@ -1,0 +1,103 @@
+<header>
+    <div class="header-cont container">
+        <a href="index.html" class="logo"><img src="img/logo.svg" alt=""></a>
+        <div class="links-cont">
+            <a href="index.html" class="link">Главная</a>
+            <a href="#rates" class="link">Тарифы</a>
+            <a href="#about" class="link">О нас</a>
+            <a href="#footer" class="link">Контакты</a>
+        </div>
+    </div>
+</header>
+<div class="modalka modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen-xl-down modal-xl" role="document">
+        <div class="modal-content">
+            <img src="img/l-form.png" alt="" class="left-angle-modal">
+            <img src="img/r-form.png" alt="" class="right-angle-modal">
+            <div class="m_c_1 d-flex align-items-end justify-content-end">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <svg width="46" height="52" viewBox="0 0 46 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="-1" x2="65.0432" y2="-1"
+                            transform="matrix(-0.645712 0.763581 -0.855029 -0.51858 44 0)" stroke="#F9651C"
+                            stroke-width="2" />
+                        <line y1="-1" x2="65.0432" y2="-1"
+                            transform="matrix(-0.645724 -0.763571 0.653394 -0.757018 44 49.666)" stroke="#F9651C"
+                            stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+            <div id="MainForm" class="" data-bs-whatever="">
+                
+                <div class="sub-title">
+                    Устали терпеть услуги, которые не приносят результат, слитые бюджеты и плохих партнеров?
+                </div>
+                <div class="title">
+                    Поздравляем! Вы нашли тех, кто работает на результат
+                </div>
+                <form id="form" action="form-handler.php" onsubmit="form_submit(event)" method="POST"
+                    class="d-flex flex-column form align-items-center">
+                    <input type="tel" placeholder="+7 988 888 88 88*" id="FormInputTel" name="FormInputTel">
+                    <input type="name" placeholder="Имя Фамилия" id="FormInputName" name="FormInputName">
+                    <button type="submit" class="form-butt">Заказать разработку</button>
+                </form>
+
+            </div>
+            <div class="green" id="FormSuccess">
+                <h3>
+                    Благодарим! <br>Ваша заявка принята!
+                </h3>
+                <div>
+                    С вами свяжиться наш менеджер в самое ближайшее время :)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modalka modal fade" id="TimeModal" tabindex="-1" role="dialog" aria-labelledby="TimeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen-xl-down modal-xl" role="document">
+        <div class="modal-content">
+            <img src="img/l-form.png" alt="" class="left-angle-modal">
+            <img src="img/r-form.png" alt="" class="right-angle-modal">
+            <div class="m_c_1 d-flex align-items-end justify-content-end">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <svg width="46" height="52" viewBox="0 0 46 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="-1" x2="65.0432" y2="-1"
+                            transform="matrix(-0.645712 0.763581 -0.855029 -0.51858 44 0)" stroke="#F9651C"
+                            stroke-width="2" />
+                        <line y1="-1" x2="65.0432" y2="-1"
+                            transform="matrix(-0.645724 -0.763571 0.653394 -0.757018 44 49.666)" stroke="#F9651C"
+                            stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+            <div id="MainFormTime" class="" data-bs-whatever="timeout">
+                
+                <div class="sub-title">
+                    Скидка 20%
+                </div>
+                <div class="title">
+                    При заказе сайта на чистом коде + продвижение <br>
+                    Действует скидка в 20% на комплекс. <br> 
+                    Акция ограничена. Действует до 17.09.2022
+                </div>
+                <form id="formTime" action="form-handler.php" onsubmit="form_submit_Time(event)" method="POST"
+                    class="d-flex flex-column form align-items-center">
+                    <input type="tel" placeholder="+7 988 888 88 88*" id="FormInputTelTime" name="FormInputTel">
+                    <input type="name" placeholder="Имя Фамилия" id="FormInputNameTime" name="FormInputName">
+                    <button type="submit" class="form-butt">Заказать разработку</button>
+                </form>
+
+            </div>
+            <div class="green" id="FormSuccessTime">
+                <h3>
+                    Благодарим! <br>Ваша заявка принята!
+                </h3>
+                <div>
+                    С вами свяжиться наш менеджер в самое ближайшее время :)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
