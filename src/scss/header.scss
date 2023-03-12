@@ -1,273 +1,45 @@
 header {
-    top: 0;
-    width: 100%;
-    position: fixed;
-    transition: all 0.5s ease-in-out;
     z-index: 100;
-    &.hide {
-        top: -86px;
-    }
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     .header-cont {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: nowrap;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
         align-items: center;
+        // border-bottom: 1px solid $c-border;
         width: 100%;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        position: relative;
+        padding: 65px 100px;
+        line-height: 1em;
     }
-
-    a {
-        display: inline-flex;
-        @extend %def-t;
+    .logo {
+        display: grid;
+        place-items: center;
+        cursor: pointer;
     }
     img {
-        @media (max-width:991px) {
-            max-width: 70%;
-        }
-        @media (max-width:520px) {
-            max-width: calc(100% - 20px);
-        }
-        @media (max-width:400px) {
-            max-width: calc(100% - 15px);
-        }
-    }
-
-    .links-cont {
-        display: inline-flex;
-        .link {
-            white-space: nowrap;
-        }
-        .link:not(:first-child) {
-            margin-left: 40px;
-            @media (max-width:520px) {
-                margin-left: 20px;
-            }
-            @media (max-width:400px) {
-                margin-left: 15px;
-            }
-        }
-    }
-}
-
-
-
-
-.modalka {
-    .modal-dialog {
-        .modal-content {
-            background: #000;
-            border: none;
-            color: #fff;
-            background-color: $clr-black;
-            background-image: url(../img/bg.png);
-            background-repeat: repeat;
-            background-blend-mode: hard-light;
-            height: 700px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0;
-            .left-angle-modal {
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-            .right-angle-modal {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-            }
-            @media (max-width:1400px) {
-                height: 550px;
-            }
-            @media (max-width:1200px) {
-                height: 100%;
-                border-radius: 0;
-                border: none;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-            #MainForm {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                z-index: 3;
-            }
-            .m_c_1 {
-                width: 100%;
-                position: absolute;
-
-                font-size: 30px;
-                color: #fff;
-                top: .75em;
-                right: 1.5em;
-                @media (max-width:1400px) {
-                    svg {
-                        transform: scale(.8);
-                    }
-                }
-                @media (max-width:767px) {
-                    svg {
-                        transform: scale(.5);
-                    }
-                    top: 15px;
-                    right: 15px;
-                }
-                .close {
-                    font-size: 40px;
-                    background: none;
-                    border: none;
-                    color: #fff;
-
-                    &:focus {
-                        outline: none;
-                        border: none;
-                    }
-                }
-            }
-
-            line-height: normal;
-
-
-            .title {
-                font-family: $nm-r;
-                font-size: 24px;
-                text-align: center;
-                margin-bottom: 20px;
-                width: 20em;
-                @media (max-width:1400px) {
-                    font-size: 20px;
-                }
-                @media (max-width:767px) {
-                    font-size: 16px;
-                }
-            }
-
-
-            .sub-title {
-                font-family: $nm-r;
-                text-transform: uppercase;
-                font-size: 36px;
-                margin-bottom: 10px;
-                width: 18em;
-                text-align: center;
-                @media (max-width:1400px) {
-                    font-size: 30px;
-                }
-                @media (max-width:767px) {
-                    font-size: 25px;
-                }
-                @media (max-width:575px) {
-                    font-size: 22px;
-                }
-                @media (max-width:575px) {
-                    width: 100%;
-                }
-            }
-
-            form {
-                color: $clr-gray;
-                font-family: $nm-r;
-                font-size: 24px;
-                @media (max-width:1400px) {
-                    font-size: 20px;
-                }
-                @media (max-width:767px) {
-                    font-size: 16px;
-                }
-                width: 20em;
-                input {
-                    width: 100%;
-                    margin: 0 0 20px 0;
-                    padding: 8px;
-                    border: 1px solid $clr-gray;
-                    background: transparent;
-                    color: $clr-gray;
-                    &:focus {
-                        outline: none;
-                    }
-                }
-            }
-
-            .form-butt {
-                background-image: url(../img/scotch-bg.png);
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center;
-                text-align: center;
-                font-family: $nm-r;
-                font-size: 24px;
-                border: none;
-                color: #fff;
-                padding: .75em 0;
-                line-height: 1em;
-                width: 100%;
-                cursor: pointer;
-                width: 100%;
-                @media (max-width:1400px) {
-                    font-size: 20px;
-                }
-                @media (max-width:767px) {
-                    font-size: 16px;
-                }
-            }
-        }
-    }
-}
-#TimeModal {
-    .sub-title {
         width: auto;
+        height: 28px;
+        aspect-ratio: 1132 / 307;
     }
-}
-.green {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-
-    div {
-        font-family: $nm-r;
-        font-size: 24px;
-        text-align: center;
-        margin-bottom: 20px;
-        width: 20em;
-        @media (max-width:1400px) {
-            font-size: 20px;
-        }
-        @media (max-width:767px) {
-            font-size: 16px;
+    .right-col {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 40px;
+        .form-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            svg {
+                margin-top: 6px;
+            }
         }
     }
 
-
-    h3 {
-        font-family: $nm-r;
-        text-transform: uppercase;
-        font-size: 50px;
-        margin-bottom: 10px;
-        width: 18em;
-        text-align: center;
-        @media (max-width:1400px) {
-            font-size: 30px;
-        }
-        @media (max-width:767px) {
-            font-size: 25px;
-        }
-        @media (max-width:575px) {
-            font-size: 22px;
-        }
-        @media (max-width:575px) {
-            width: 100%;
-        }
+    .lang {
+        cursor: pointer;
     }
-
 }
