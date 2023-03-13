@@ -77,13 +77,13 @@ for (var i = 0; i < texts.length; i++) {
     var rect = e.target.getBoundingClientRect();
     let left = e.clientX - rect.left;
     let right = rect.right - e.clientX;
-    let diff = (left - right)/10;
+    let diff = (left - right) / 10;
     coords.rx = 335 + diff;
     console.log(coords.rx);
     coords.ry = (e.clientY - rect.top);
     coords.lx = 165 + diff;
     console.log(coords.lx);
-    coords.ly = (e.clientY - rect.top); 
+    coords.ly = (e.clientY - rect.top);
     cursor.querySelector('path').setAttribute('d', `M 165 0 L 335 0 Q ${coords.rx} 115 335 230 L 165 230 Q ${coords.lx} 115 165 0 `)
   });
 }
