@@ -60,7 +60,6 @@ for (var i = 0; i < texts.length; i++) {
   let lbg = lbgs[i];
   let rbg = rbgs[i];
   let btnclass = 'cursor' + [i + 1]
-  console.log(btnclass);
   text.addEventListener('mouseover', () => {
     cursor.classList.add('hover');
     lbg.classList.add('hover');
@@ -79,11 +78,39 @@ for (var i = 0; i < texts.length; i++) {
     let right = rect.right - e.clientX;
     let diff = (left - right) / 10;
     coords.rx = 335 + diff;
-    console.log(coords.rx);
     coords.ry = (e.clientY - rect.top);
     coords.lx = 165 + diff;
-    console.log(coords.lx);
     coords.ly = (e.clientY - rect.top);
     cursor.querySelector('path').setAttribute('d', `M 165 0 L 335 0 Q ${coords.rx} 115 335 230 L 165 230 Q ${coords.lx} 115 165 0 `)
   });
 }
+
+const controller = new ScrollMagic.Controller();
+
+new ScrollMagic.Scene({
+    triggerElement: 'body',
+    offset: 100,
+    duration: 0,
+    triggerHook: 0,
+  })
+  .setClassToggle('.header-cont', 'active')
+  .addTo(controller);
+
+new fullpage('#fullpage', {
+  //options here
+  autoScrolling: true,
+  scrollHorizontally: true
+});
+
+
+document.querySelector('input#main').addEventListener('click',() => {
+  if (document.querySelector('input#main').checked) {
+    document.querySelectorAll('input.def').forEach(element => {
+      element.checked = true;
+    });
+  } else {
+    document.querySelectorAll('input.def').forEach(element => {
+      element.checked = false;
+    });
+  }
+})
