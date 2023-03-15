@@ -133,16 +133,20 @@ document.querySelectorAll('.acc').forEach(acc => {
 document.querySelector('#s2 .acc:first-child').click()
 
 
+$('.my-dropdown').click(function () {
+  $(this).attr('tabindex', 1).focus();
+  $(this).toggleClass('active');
+  $(this).find('.my-dropdown-menu').slideToggle(300);
+});
+$('.my-dropdown').focusout(function () {
+  $(this).removeClass('active');
+  $(this).find('.my-dropdown-menu').slideUp(300);
+});
+$('.my-dropdown .my-dropdown-menu li').click(function () {
+  $(this).parents('.my-dropdown').find('span').text($(this).text());
+  $(this).parents('.my-dropdown').find('span').removeClass();
+  $(this).parents('.my-dropdown').find('span').addClass($(this).text());
+  $('.my-dropdown .my-dropdown-menu li').show()
+  $(this).hide()
+});
 
-
-// document.querySelector('input#main').addEventListener('click',() => {
-//   if (document.querySelector('input#main').checked) {
-//     document.querySelectorAll('input.def').forEach(element => {
-//       element.checked = true;
-//     });
-//   } else {
-//     document.querySelectorAll('input.def').forEach(element => {
-//       element.checked = false;
-//     });
-//   }
-// })

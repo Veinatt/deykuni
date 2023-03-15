@@ -47,4 +47,41 @@ header {
     .lang {
         cursor: pointer;
     }
+    .my-dropdown {
+        outline: none;
+        display: inline-block;
+        transition: all .3s ease;
+        position: relative;
+        line-height: 1em;
+        color: #fff;
+        text-align: left;
+        user-select: none;
+    }
+
+    .my-dropdown .select {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .my-dropdown .my-dropdown-menu {
+        position: absolute;
+        width: 1.5em;
+        left: 0;
+        overflow: hidden;
+        display: none;
+        margin-top: .35em;
+    }
+
+    .my-dropdown .my-dropdown-menu li {
+        padding: .3em 0;
+        transition: all .2s ease-in-out;
+        cursor: pointer
+    }
+
+    .my-dropdown .my-dropdown-menu {
+        padding: 0;
+        list-style: none !important
+    }
 }
