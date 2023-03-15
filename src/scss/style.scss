@@ -49,23 +49,50 @@ body {
 	color: #fff;
 	font-family: $f-r;
 	font-size: 24px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-	height: 100%;
-	position: relative;
+
 	img {
 		pointer-events: none !important;
 	}
+
+	height: 100%;
+	position: relative;
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+
 	&::-webkit-scrollbar {
 		display: none;
 	}
 }
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+	color: #fff;
+}
+
+button,
+button:hover,
+button:active,
+button:focus {
+	color: #fff;
+	border: none;
+	outline: none;
+
+}
+
 section {
 	overflow: hidden;
 }
+
 .main-title {
-    font-size: 80px;
+	font-size: 80px;
 }
+
 .cursor {
 	overflow: hidden;
 	width: 500px;
@@ -80,11 +107,13 @@ section {
 
 	&.hover {
 		opacity: 1;
+
 		.sim1 {
 			opacity: 1;
 			transition: opacity 0s ease-in-out;
 			transition-delay: .5s;
 		}
+
 		.sim2 {
 			opacity: 0;
 			transition: opacity 0s ease-in-out;
@@ -100,6 +129,7 @@ section {
 		animation-delay: 0s;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
+
 		div {
 			font-family: $f-b;
 			font-size: 75px;
@@ -107,6 +137,7 @@ section {
 			color: $c-black;
 		}
 	}
+
 	.sim2 {
 		opacity: 1;
 		position: absolute;
@@ -114,6 +145,7 @@ section {
 		animation-duration: .25s;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
+
 		div {
 			font-family: $f-b;
 			font-size: 75px;
@@ -121,16 +153,19 @@ section {
 			color: $c-black;
 		}
 	}
+
 	&.cursor1 {
 		path {
 			fill: $c-blue
 		}
 	}
+
 	&.cursor2 {
 		path {
 			fill: $c-green
 		}
 	}
+
 	&.cursor3 {
 		path {
 			fill: $c-pink
@@ -139,6 +174,7 @@ section {
 }
 
 .anchor-down {
+	z-index: 100;
 	position: absolute;
 	bottom: 100px;
 	left: 100px;
@@ -151,18 +187,21 @@ section {
 	border-radius: 50%;
 	transition: all .3s ease-in-out;
 	border: 1px solid $c-border;
+
 	svg {
 		path {
 			fill: #fff;
 		}
 	}
 }
+
 #s1 {
 	width: 100%;
 	height: 100vh;
 	position: relative;
 	overflow: hidden;
 	display: block;
+
 	.anchor-down {
 		transform: translateX(-50%);
 		left: 50%;
@@ -171,29 +210,36 @@ section {
 		background-color: #fff;
 		border-radius: 50%;
 		border: 1px solid transparent;
+
 		svg {
 			path {
 				fill: $c-black;
 			}
 		}
+
 		&.cursor1 {
 			background-color: $c-blue;
+
 			svg {
 				path {
 					fill: #fff;
 				}
 			}
 		}
+
 		&.cursor2 {
 			background-color: $c-green;
+
 			svg {
 				path {
 					fill: $c-black;
 				}
 			}
 		}
+
 		&.cursor3 {
 			background-color: $c-pink;
+
 			svg {
 				path {
 					fill: $c-black;
@@ -201,6 +247,7 @@ section {
 			}
 		}
 	}
+
 	.s1-cont {
 		position: absolute;
 		top: calc(50% - 180px);
@@ -228,7 +275,7 @@ section {
 			margin-bottom: 100px;
 		}
 
-		
+
 	}
 
 	.s1-bg {
@@ -252,18 +299,20 @@ section {
 
 		&.hover {
 			opacity: 1;
+
 			.sim1 {
 				opacity: 1;
 				transition: opacity 0s ease-in-out;
 				transition-delay: .5s;
 			}
+
 			.sim2 {
 				opacity: 0;
 				transition: opacity 0s ease-in-out;
 				transition-delay: .5s;
 			}
 		}
-	
+
 		.sim1 {
 			opacity: 0;
 			position: absolute;
@@ -272,6 +321,7 @@ section {
 			animation-delay: 0s;
 			animation-iteration-count: infinite;
 			animation-timing-function: linear;
+
 			div {
 				font-family: $f-b;
 				font-size: 450px;
@@ -279,6 +329,7 @@ section {
 				color: $c-black;
 			}
 		}
+
 		.sim2 {
 			opacity: 1;
 			position: absolute;
@@ -286,6 +337,7 @@ section {
 			animation-duration: .25s;
 			animation-iteration-count: infinite;
 			animation-timing-function: linear;
+
 			div {
 				font-family: $f-b;
 				font-size: 450px;
@@ -332,24 +384,86 @@ section {
 	height: 100vh;
 	position: relative;
 	padding: 0 100px;
+
+	.s2-overflow {
+		width: 100%;
+		height: calc(100% + 400px);
+		overflow: hidden;
+		position: relative;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+	.s2-sticky{
+		position: sticky;
+		top: 0;
+		left: 0;
+	}
 	.main-title {
 		padding-top: calc($h-s + 50px);
 	}
+
+	.acc-cont {
+		margin-top: 50px;
+	}
+
+	/* Style the buttons that are used to open and close the accordion panel */
+	.acc {
+		padding: 0;
+		margin-bottom: 20px;
+	}
+
+	/* Style the accordion panel. Note: hidden by default */
+	.panel {
+		width: 26em;
+		margin-bottom: 20px;
+		color: $c-gray;
+		font-family: $f-l;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-out;
+	}
 }
+
 @import "header.scss";
 @import "footer.scss";
 
 .fp-watermark {
-	display:none !important;
+	display: none !important;
 }
 
 .fp-overflow {
 	width: 100%;
 	height: 100%;
+	-ms-overflow-style: none;
+		scrollbar-width: none;
+
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 }
 
 
 #s3 {
+	width: 100%;
+	height: 100vh;
+	.fp-overflow {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 10px;
+	}
+}
+
+#s4 {
+	width: 100%;
+	height: 100vh;
 	.fp-overflow {
 		display: flex;
 		justify-content: center;

@@ -222,10 +222,10 @@ body {
   color: #fff;
   font-family: MabryPro-Regular;
   font-size: 24px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   height: 100%;
   position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body img {
@@ -234,6 +234,24 @@ body img {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: #fff;
+}
+
+button,
+button:hover,
+button:active,
+button:focus {
+  color: #fff;
+  border: none;
+  outline: none;
 }
 
 section {
@@ -319,6 +337,7 @@ section {
 }
 
 .anchor-down {
+  z-index: 100;
   position: absolute;
   bottom: 100px;
   left: 100px;
@@ -515,14 +534,54 @@ section {
   height: 100vh;
   position: relative;
   padding: 0 100px;
+  /* Style the buttons that are used to open and close the accordion panel */
+  /* Style the accordion panel. Note: hidden by default */
+}
+
+#s2 .s2-overflow {
+  width: 100%;
+  height: calc(100% + 400px);
+  overflow: hidden;
+  position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#s2 .s2-overflow::-webkit-scrollbar {
+  display: none;
+}
+
+#s2 .s2-sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 #s2 .main-title {
   padding-top: 210px;
 }
 
+#s2 .acc-cont {
+  margin-top: 50px;
+}
+
+#s2 .acc {
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#s2 .panel {
+  width: 26em;
+  margin-bottom: 20px;
+  color: #777;
+  font-family: MabryPro-Light;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
 header {
-  z-index: 100;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -586,9 +645,33 @@ header .lang {
 .fp-overflow {
   width: 100%;
   height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.fp-overflow::-webkit-scrollbar {
+  display: none;
+}
+
+#s3 {
+  width: 100%;
+  height: 100vh;
 }
 
 #s3 .fp-overflow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#s4 {
+  width: 100%;
+  height: 100vh;
+}
+
+#s4 .fp-overflow {
   display: flex;
   justify-content: center;
   align-items: center;

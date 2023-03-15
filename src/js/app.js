@@ -98,19 +98,51 @@ new ScrollMagic.Scene({
 
 new fullpage('#fullpage', {
   //options here
-  autoScrolling: true,
-  scrollHorizontally: true
+  afterLoad: function() {
+    if(document.querySelector('#s1').classList.contains('active')) {
+      document.querySelector('.header-cont').classList.remove('active')
+    } else {
+      document.querySelector('.header-cont').classList.add('active')
+    }
+  },
 });
 
-
-document.querySelector('input#main').addEventListener('click',() => {
-  if (document.querySelector('input#main').checked) {
-    document.querySelectorAll('input.def').forEach(element => {
-      element.checked = true;
-    });
-  } else {
-    document.querySelectorAll('input.def').forEach(element => {
-      element.checked = false;
-    });
-  }
+document.querySelectorAll('.anchor-down').forEach(btn => {
+  btn.addEventListener('click', () => {
+    fullpage_api.moveSectionDown();
+  })
 })
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+document.querySelectorAll('.acc').forEach(acc => {
+  acc.addEventListener("click", function() {
+    document.querySelectorAll('.acc').forEach(accs => {
+      accs.classList.remove("active");
+      accs.nextElementSibling.style.maxHeight = null;
+    })
+    this.classList.add("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+})
+document.querySelector('#s2 .acc:first-child').click()
+
+
+
+
+// document.querySelector('input#main').addEventListener('click',() => {
+//   if (document.querySelector('input#main').checked) {
+//     document.querySelectorAll('input.def').forEach(element => {
+//       element.checked = true;
+//     });
+//   } else {
+//     document.querySelectorAll('input.def').forEach(element => {
+//       element.checked = false;
+//     });
+//   }
+// })
