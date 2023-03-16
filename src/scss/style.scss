@@ -383,12 +383,11 @@ section {
 	width: 100%;
 	height: 100vh;
 	position: relative;
-	padding: 0 100px;
 
 	.s2-overflow {
 		width: 100%;
-		height: calc(100% + 400px);
-		overflow: hidden;
+		height: calc(100% + 300px);
+		overflow: visible;
 		position: relative;
 		-ms-overflow-style: none;
 		scrollbar-width: none;
@@ -398,17 +397,41 @@ section {
 			display: none;
 		}
 	}
-	.s2-sticky{
+
+	.s2-sticky {
 		position: sticky;
 		top: 0;
 		left: 0;
 	}
+
 	.main-title {
 		padding-top: calc($h-s + 50px);
 	}
 
 	.acc-cont {
 		margin-top: 50px;
+	}
+
+	.acc-img {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		opacity: 0;
+		transition: opacity .3s ease-in-out;
+
+		&.active {
+			opacity: 1;
+		}
+
+		g.woman {
+			&.active {
+				rect {
+					transition: all .3s ease-in-out;
+					fill: $c-blue;
+					box-shadow: 0px 0px 25px 0px rgba(51, 96, 255, 1);
+				}
+			}
+		}
 	}
 
 	/* Style the buttons that are used to open and close the accordion panel */
@@ -439,19 +462,21 @@ section {
 .fp-overflow {
 	width: 100%;
 	height: 100%;
+	padding: 0 100px;
 	-ms-overflow-style: none;
-		scrollbar-width: none;
+	scrollbar-width: none;
 
 
-		&::-webkit-scrollbar {
-			display: none;
-		}
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 
 #s3 {
 	width: 100%;
 	height: 100vh;
+
 	.fp-overflow {
 		display: flex;
 		justify-content: center;
@@ -464,6 +489,7 @@ section {
 #s4 {
 	width: 100%;
 	height: 100vh;
+
 	.fp-overflow {
 		display: flex;
 		justify-content: center;

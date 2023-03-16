@@ -85,21 +85,143 @@ for (var i = 0; i < texts.length; i++) {
   });
 }
 
+function preventScroll(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  return false;
+}
+
+function disableScroll() {
+  document.querySelector('.s2-overflow').addEventListener('wheel', preventScroll);
+}
+
+function enableScroll() {
+  document.querySelector('.s2-overflow  ').removeEventListener('wheel', preventScroll);
+}
+
+
 const controller = new ScrollMagic.Controller();
 
 new ScrollMagic.Scene({
-    triggerElement: 'body',
+    triggerElement: '.s2-overflow',
+    duration: 1,
+    triggerHook: 0,
+  })
+  .on("enter", function (event) {
+    disableScroll()
+    document.querySelector('#s2 .acc-fst').click()
+    setTimeout(() => {
+      enableScroll()
+    }, "3000");
+  })
+  .addTo(controller);
+new ScrollMagic.Scene({
+    triggerElement: '.s2-overflow',
+    offset: 100,
+    duration: 1,
+    triggerHook: 0,
+  })
+  .on("enter", function (event) {
+    disableScroll()
+    document.querySelector('#s2 .acc-snd').click()
+    setTimeout(() => {
+      enableScroll()
+    }, "3000");
+  })
+  .addTo(controller);
+new ScrollMagic.Scene({
+    triggerElement: '.s2-overflow',
+    offset: 200,
+    duration: 1,
+    triggerHook: 0,
+  })
+  .on("enter", function (event) {
+    disableScroll()
+    document.querySelector('#s2 .acc-trd').click()
+    setTimeout(() => {
+      enableScroll()
+    }, "3000");
+  })
+  .addTo(controller);
+new ScrollMagic.Scene({
+    triggerElement: '.s2-overflow',
+    offset: 300,
+    duration: 1,
+    triggerHook: 0,
+  })
+  .on("enter", function (event) {
+    disableScroll()
+    document.querySelector('#s2 .acc-fth').click()
+    setTimeout(() => {
+      enableScroll()
+    }, "3000");
+  })
+  .addTo(controller);
+
+
+
+new ScrollMagic.Scene({
+    triggerElement: '.s2-overflow',
     offset: 100,
     duration: 0,
     triggerHook: 0,
   })
-  .setClassToggle('.header-cont', 'active')
+  .on("leave", function (event) {
+    disableScroll()
+    document.querySelector('#s2 .acc-fst').click()
+    setTimeout(() => {
+      enableScroll()
+    }, "3000");
+  })
   .addTo(controller);
 
+new ScrollMagic.Scene({
+    triggerElement: '.s2-overflow',
+    offset: 200,
+    duration: 0,
+    triggerHook: 0,
+  })
+  .on("leave", function (event) {
+    disableScroll()
+    document.querySelector('#s2 .acc-snd').click()
+    setTimeout(() => {
+      enableScroll()
+    }, "3000");
+  })
+  .addTo(controller);
+new ScrollMagic.Scene({
+    triggerElement: '.s2-overflow',
+    offset: 300,
+    duration: 0,
+    triggerHook: 0,
+  })
+  .on("leave", function (event) {
+    disableScroll()
+    document.querySelector('#s2 .acc-trd').click()
+    setTimeout(() => {
+      enableScroll()
+    }, "3000");
+  })
+  .addTo(controller);
+new ScrollMagic.Scene({
+    triggerElement: '.s2-overflow',
+    offset: 400,
+    duration: 0,
+    triggerHook: 0,
+  })
+  .on("leave", function (event) {
+    disableScroll()
+    document.querySelector('#s2 .acc-fth').click()
+    setTimeout(() => {
+      enableScroll()
+    }, "3000");
+  })
+  .addTo(controller);
 new fullpage('#fullpage', {
   //options here
-  afterLoad: function() {
-    if(document.querySelector('#s1').classList.contains('active')) {
+  afterLoad: function () {
+    if (document.querySelector('#s1').classList.contains('active')) {
       document.querySelector('.header-cont').classList.remove('active')
     } else {
       document.querySelector('.header-cont').classList.add('active')
@@ -116,11 +238,17 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 document.querySelectorAll('.acc').forEach(acc => {
-  acc.addEventListener("click", function() {
+  acc.addEventListener("click", function () {
     document.querySelectorAll('.acc').forEach(accs => {
       accs.classList.remove("active");
       accs.nextElementSibling.style.maxHeight = null;
-    })
+    });
+    document.querySelectorAll('.acc-img').forEach(imgs => {
+      imgs.classList.remove("active");
+      imgs.querySelectorAll('g').forEach(gs => {
+        gs.classList.remove("active");
+      });
+    });
     this.classList.add("active");
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
@@ -130,8 +258,12 @@ document.querySelectorAll('.acc').forEach(acc => {
     }
   });
 })
-document.querySelector('#s2 .acc:first-child').click()
-
+document.querySelector('.acc.acc-fst').addEventListener("click", function () {
+  document.querySelector('.acc-fst-img').classList.add('active')
+  setTimeout(() => {
+    document.querySelector('g.woman').classList.add('active')
+  }, '2000');
+});
 
 $('.my-dropdown').click(function () {
   $(this).attr('tabindex', 1).focus();
@@ -149,4 +281,3 @@ $('.my-dropdown .my-dropdown-menu li').click(function () {
   $('.my-dropdown .my-dropdown-menu li').show()
   $(this).hide()
 });
-
