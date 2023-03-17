@@ -261,7 +261,9 @@ document.querySelectorAll('.acc').forEach(acc => {
 document.querySelector('.acc.acc-fst').addEventListener("click", function () {
   document.querySelector('.acc-fst-img').classList.add('active')
   setTimeout(() => {
-    document.querySelector('g.woman').classList.add('active')
+    document.querySelector('.acc-fst-img').querySelectorAll('svg.bl').forEach(img => {
+      img.classList.add('active')
+    })
   }, '2000');
 });
 
