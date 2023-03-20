@@ -565,15 +565,19 @@ section {
 }
 
 #s2 .acc-img {
+  pointer-events: none;
   position: absolute;
   bottom: 0;
   right: 0;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  transition-delay: 0s;
 }
 
 #s2 .acc-img.active {
   opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  transition-delay: 0.3s;
 }
 
 #s2 .acc-img svg.bl.active {
@@ -584,6 +588,36 @@ section {
 #s2 .acc-img svg.bl.active g rect {
   transition: all 0.3s ease-in-out;
   fill: #3360FF;
+}
+
+#s2 .acc-img svg.gr.active {
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(0px 0px 60px rgba(177, 255, 51, 0.3));
+}
+
+#s2 .acc-img svg.gr.active g rect {
+  transition: all 0.3s ease-in-out;
+  fill: #B1FF33;
+}
+
+#s2 .acc-img svg.ye.active {
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(0px 0px 60px rgba(236, 194, 16, 0.3));
+}
+
+#s2 .acc-img svg.ye.active path {
+  transition: all 0.3s ease-in-out;
+  fill: #ECC210;
+}
+
+#s2 .acc-img svg.purp.active {
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(0px 0px 60px rgba(226, 51, 255, 0.3));
+}
+
+#s2 .acc-img svg.purp.active path {
+  transition: all 0.3s ease-in-out;
+  fill: #E233FF;
 }
 
 #s2 .acc-img.acc-fst-img svg {
@@ -604,6 +638,7 @@ section {
 #s2 .acc-img.acc-fst-img svg:nth-child(3) {
   right: 200px;
   z-index: 7;
+  opacity: 1;
 }
 
 #s2 .acc-img.acc-fst-img svg:nth-child(4) {
@@ -619,13 +654,13 @@ section {
 #s2 .acc-img.acc-fst-img svg:nth-child(6) {
   right: 580px;
   bottom: 100px;
-  z-index: 1;
+  z-index: -1;
 }
 
 #s2 .acc-img.acc-fst-img svg:nth-child(7) {
   right: 400px;
   bottom: 120px;
-  z-index: 2;
+  z-index: -1;
 }
 
 #s2 .acc-img.acc-fst-img svg:nth-child(8) {
@@ -641,6 +676,57 @@ section {
 #s2 .acc-img.acc-fst-img svg:nth-child(10) {
   right: 150px;
   z-index: 7;
+}
+
+#s2 .acc-img.acc-snd-img svg {
+  position: absolute;
+  bottom: 0;
+}
+
+#s2 .acc-img.acc-snd-img svg:nth-child(1) {
+  right: 320px;
+  z-index: 1;
+}
+
+#s2 .acc-img.acc-snd-img svg:nth-child(2) {
+  right: 0;
+  z-index: 2;
+}
+
+#s2 .acc-img.acc-snd-img svg:nth-child(3) {
+  right: 0;
+  z-index: 1;
+}
+
+#s2 .acc-img.acc-trd-img svg {
+  position: absolute;
+  bottom: 0;
+}
+
+#s2 .acc-img.acc-trd-img svg:nth-child(1) {
+  right: 250px;
+  bottom: 380px;
+  z-index: 2;
+}
+
+#s2 .acc-img.acc-trd-img svg:nth-child(2) {
+  right: 0;
+  z-index: 1;
+}
+
+#s2 .acc-img.acc-fth-img svg {
+  position: absolute;
+  bottom: 0;
+}
+
+#s2 .acc-img.acc-fth-img svg:nth-child(1) {
+  right: 0;
+  z-index: 1;
+}
+
+#s2 .acc-img.acc-fth-img svg:nth-child(2) {
+  right: 230px;
+  z-index: 2;
 }
 
 #s2 .acc {
@@ -778,19 +864,6 @@ header .my-dropdown .my-dropdown-menu {
 }
 
 #s3 .fp-overflow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
-
-#s4 {
-  width: 100%;
-  height: 100vh;
-}
-
-#s4 .fp-overflow {
   display: flex;
   justify-content: center;
   align-items: center;

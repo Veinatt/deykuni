@@ -218,16 +218,28 @@ new ScrollMagic.Scene({
     }, "3000");
   })
   .addTo(controller);
+
+
+
 new fullpage('#fullpage', {
   //options here
+  autoScrolling: true,
+  lockAnchors: true,
+  recordHistory: true,
   afterLoad: function () {
     if (document.querySelector('#s1').classList.contains('active')) {
       document.querySelector('.header-cont').classList.remove('active')
     } else {
       document.querySelector('.header-cont').classList.add('active')
     }
+    console.log(fullpage_api.getActiveSection());
+    var url_ob = new URL(document.URL);
+    url_ob.hash = '#' + fullpage_api.getActiveSection().item.id + '';
+    var new_url = url_ob.href;
+    document.location.href = new_url;
   },
 });
+
 
 document.querySelectorAll('.anchor-down').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -245,7 +257,7 @@ document.querySelectorAll('.acc').forEach(acc => {
     });
     document.querySelectorAll('.acc-img').forEach(imgs => {
       imgs.classList.remove("active");
-      imgs.querySelectorAll('g').forEach(gs => {
+      imgs.querySelectorAll('svg.bl').forEach(gs => {
         gs.classList.remove("active");
       });
     });
@@ -266,7 +278,30 @@ document.querySelector('.acc.acc-fst').addEventListener("click", function () {
     })
   }, '2000');
 });
-
+document.querySelector('.acc.acc-snd').addEventListener("click", function () {
+  document.querySelector('.acc-snd-img').classList.add('active')
+  setTimeout(() => {
+    document.querySelector('.acc-snd-img').querySelectorAll('svg.gr').forEach(img => {
+      img.classList.add('active')
+    })
+  }, '2000');
+});
+document.querySelector('.acc.acc-trd').addEventListener("click", function () {
+  document.querySelector('.acc-trd-img').classList.add('active')
+  setTimeout(() => {
+    document.querySelector('.acc-trd-img').querySelectorAll('svg.ye').forEach(img => {
+      img.classList.add('active')
+    })
+  }, '2000');
+});
+document.querySelector('.acc.acc-fth').addEventListener("click", function () {
+  document.querySelector('.acc-fth-img').classList.add('active')
+  setTimeout(() => {
+    document.querySelector('.acc-fth-img').querySelectorAll('svg.purp').forEach(img => {
+      img.classList.add('active')
+    })
+  }, '2000');
+});
 $('.my-dropdown').click(function () {
   $(this).attr('tabindex', 1).focus();
   $(this).toggleClass('active');

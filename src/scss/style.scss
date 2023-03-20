@@ -383,7 +383,6 @@ section {
 	width: 100%;
 	height: 100vh;
 	position: relative;
-
 	.s2-overflow {
 		width: 100%;
 		height: calc(100% + 300px);
@@ -413,14 +412,17 @@ section {
 	}
 
 	.acc-img {
+		pointer-events: none;
 		position: absolute;
 		bottom: 0;
 		right: 0;
 		opacity: 0;
 		transition: opacity .3s ease-in-out;
-
+		transition-delay: 0s;
 		&.active {
 			opacity: 1;
+			transition: opacity .3s ease-in-out;
+			transition-delay: .3s;
 		}
 
 		svg.bl {
@@ -434,7 +436,39 @@ section {
 				}
 			}
 		}
+		svg.gr {
+			&.active {
+				transition: all .3s ease-in-out;
+				filter: drop-shadow(0px 0px 60px rgba(177, 255, 51, 0.3));
 
+				g rect {
+					transition: all .3s ease-in-out;
+					fill: $c-green
+				}
+			}
+		}
+		svg.ye {
+			&.active {
+				transition: all .3s ease-in-out;
+				filter: drop-shadow(0px 0px 60px rgba(236, 194, 16, 0.3));
+
+				path {
+					transition: all .3s ease-in-out;
+					fill: #ECC210
+				}
+			}
+		}
+		svg.purp {
+			&.active {
+				transition: all .3s ease-in-out;
+				filter: drop-shadow(0px 0px 60px rgba(226, 51, 255, 0.3));
+
+				path {
+					transition: all .3s ease-in-out;
+					fill: $c-pink
+				}
+			}
+		}
 		&.acc-fst-img {
 			svg {
 				position: absolute;
@@ -451,6 +485,7 @@ section {
 				&:nth-child(3) {
 					right:200px;
 					z-index: 7;
+					opacity: 1;
 				}
 				&:nth-child(4) {
 					right:350px;
@@ -463,12 +498,12 @@ section {
 				&:nth-child(6) {
 					right: 580px;
 					bottom: 100px;
-					z-index: 1;
+					z-index: -1;
 				}
 				&:nth-child(7) {
 					right:400px;
 					bottom: 120px;
-					z-index: 2;
+					z-index: -1;
 				}
 				&:nth-child(8) {
 					right:0px;
@@ -481,6 +516,56 @@ section {
 				&:nth-child(10) {
 					right:150px;
 					z-index: 7;
+				}
+			}
+		}
+		&.acc-snd-img {
+			svg {
+				position: absolute;
+				bottom: 0;
+
+				&:nth-child(1) {
+					right: 320px;
+					z-index: 1;
+				}
+				&:nth-child(2) {
+					right:0;
+					z-index: 2;
+				}
+				&:nth-child(3) {
+					right:0;
+					z-index: 1;
+				}
+			}
+		}
+		&.acc-trd-img {
+			svg {
+				position: absolute;
+				bottom: 0;
+
+				&:nth-child(1) {
+					right: 250px;
+					bottom: 380px;
+					z-index: 2;
+				}
+				&:nth-child(2) {
+					right:0;
+					z-index: 1;
+				}
+			}
+		}
+		&.acc-fth-img {
+			svg {
+				position: absolute;
+				bottom: 0;
+
+				&:nth-child(1) {
+					right: 0;
+					z-index: 1;
+				}
+				&:nth-child(2) {
+					right:230px;
+					z-index: 2;
 				}
 			}
 		}
@@ -526,19 +611,6 @@ section {
 
 
 #s3 {
-	width: 100%;
-	height: 100vh;
-
-	.fp-overflow {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		gap: 10px;
-	}
-}
-
-#s4 {
 	width: 100%;
 	height: 100vh;
 
