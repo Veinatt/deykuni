@@ -101,123 +101,123 @@ function enableScroll() {
 }
 
 
-const controller = new ScrollMagic.Controller();
+// const controller = new ScrollMagic.Controller();
 
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    duration: 1,
-    triggerHook: 0,
-  })
-  .on("enter", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-fst').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 100,
-    duration: 1,
-    triggerHook: 0,
-  })
-  .on("enter", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-snd').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 200,
-    duration: 1,
-    triggerHook: 0,
-  })
-  .on("enter", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-trd').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 300,
-    duration: 1,
-    triggerHook: 0,
-  })
-  .on("enter", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-fth').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     duration: 1,
+//     triggerHook: 0,
+//   })
+//   .on("enter", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-fst').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 100,
+//     duration: 1,
+//     triggerHook: 0,
+//   })
+//   .on("enter", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-snd').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 200,
+//     duration: 1,
+//     triggerHook: 0,
+//   })
+//   .on("enter", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-trd').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 300,
+//     duration: 1,
+//     triggerHook: 0,
+//   })
+//   .on("enter", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-fth').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
 
 
 
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 100,
-    duration: 0,
-    triggerHook: 0,
-  })
-  .on("leave", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-fst').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 100,
+//     duration: 0,
+//     triggerHook: 0,
+//   })
+//   .on("leave", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-fst').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
 
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 200,
-    duration: 0,
-    triggerHook: 0,
-  })
-  .on("leave", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-snd').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 300,
-    duration: 0,
-    triggerHook: 0,
-  })
-  .on("leave", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-trd').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 400,
-    duration: 0,
-    triggerHook: 0,
-  })
-  .on("leave", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-fth').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 200,
+//     duration: 0,
+//     triggerHook: 0,
+//   })
+//   .on("leave", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-snd').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 300,
+//     duration: 0,
+//     triggerHook: 0,
+//   })
+//   .on("leave", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-trd').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 400,
+//     duration: 0,
+//     triggerHook: 0,
+//   })
+//   .on("leave", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-fth').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
 
 
 

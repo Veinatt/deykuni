@@ -214,12 +214,12 @@ a:active,
 a:visited,
 a:focus {
   text-decoration: none !important;
-  color: #fff;
+  color: #e9e9e9;
 }
 
 body {
   background-color: #1A1A1A;
-  color: #fff;
+  color: #e9e9e9;
   font-family: MabryPro-Regular;
   font-size: 24px;
   height: 100%;
@@ -242,14 +242,14 @@ a:visited,
 a:hover,
 a:active,
 a:focus {
-  color: #fff;
+  color: #e9e9e9;
 }
 
 button,
 button:hover,
 button:active,
 button:focus {
-  color: #fff;
+  color: #e9e9e9;
   border: none;
   outline: none;
 }
@@ -353,7 +353,7 @@ section {
 }
 
 .anchor-down svg path {
-  fill: #fff;
+  fill: #e9e9e9;
 }
 
 #s1 {
@@ -369,7 +369,7 @@ section {
   left: 50%;
   width: 90px;
   height: 90px;
-  background-color: #fff;
+  background-color: #e9e9e9;
   border-radius: 50%;
   border: 1px solid transparent;
 }
@@ -383,7 +383,7 @@ section {
 }
 
 #s1 .anchor-down.cursor1 svg path {
-  fill: #fff;
+  fill: #e9e9e9;
 }
 
 #s1 .anchor-down.cursor2 {
@@ -869,4 +869,65 @@ header .my-dropdown .my-dropdown-menu {
   align-items: center;
   flex-direction: column;
   gap: 10px;
+  padding: 0;
+}
+
+#s3 .choose-cont {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#s3 .choose-cont .choose-left {
+  width: calc(50% - 1px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 100px;
+  text-transform: uppercase;
+}
+
+#s3 .choose-cont .choose-left .choose-title {
+  font-family: MabryPro-Regular;
+  font-size: 80px;
+}
+
+#s3 .choose-cont .choose-right {
+  display: flex;
+  width: 50%;
+}
+
+#s3 .choose-cont .choose-right .choose-var {
+  width: calc(33.3333333333% - 1px);
+  border-left: #343434 1px solid;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#s3 .choose-cont .choose-right .choose-var svg {
+  display: none;
+}
+
+#s3 .choose-cont .choose-right .choose-var .title {
+  position: relative;
+}
+
+#s3 .choose-cont .choose-right .choose-var .title::after {
+  position: absolute;
+  content: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-4.37114e-07 10L1.45 8.6L5 12.15L5 -3.0598e-07L7 -2.18557e-07L7 12.15L10.55 8.6L12 10L6 16L-4.37114e-07 10Z' fill='%23E9E9E9'/%3E%3C/svg%3E%0A");
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#s3 .choose-cont .choose-right .choose-var:hover .title::after {
+  opacity: 1;
 }
