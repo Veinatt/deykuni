@@ -218,25 +218,33 @@ function enableScroll() {
 //     }, "3000");
 //   })
 //   .addTo(controller);
-
+let fpsec = window.sessionStorage.getItem('fpsec');
+console.log('amogus ' + fpsec);
+window.onload = function() {
+  fullpage_api.silentMoveTo(fpsec);
+}
 
 
 new fullpage('#fullpage', {
   //options here
   autoScrolling: true,
+  anchors: ['firstPage', 'secondPage', 'thirdPage'],
   lockAnchors: true,
   recordHistory: true,
   afterLoad: function () {
+    window.sessionStorage.setItem('fpsec', fullpage_api.getActiveSection().anchor)
+    console.log(window.sessionStorage.getItem('fpsec'));
     if (document.querySelector('#s1').classList.contains('active')) {
       document.querySelector('.header-cont').classList.remove('active')
     } else {
       document.querySelector('.header-cont').classList.add('active')
     }
-    console.log(fullpage_api.getActiveSection());
     var url_ob = new URL(document.URL);
     url_ob.hash = '#' + fullpage_api.getActiveSection().item.id + '';
     var new_url = url_ob.href;
     document.location.href = new_url;
+  },
+  onLeave: function () {
   },
 });
 
@@ -246,6 +254,11 @@ document.querySelectorAll('.anchor-down').forEach(btn => {
     fullpage_api.moveSectionDown();
   })
 })
+
+
+
+
+
 var acc = document.getElementsByClassName("accordion");
 var i;
 
