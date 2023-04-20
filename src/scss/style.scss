@@ -611,6 +611,7 @@ section {
 
 
 #s3 {
+	border-top: 1px solid $c-border;
 	width: 100%;
 	height: 100vh;
 
@@ -648,7 +649,8 @@ section {
 				svg {
 					position: absolute;
 					top: 0;
-					left: 0;
+					left: 50%;
+					transform: translateX(-50%);
 					width: 100%;
 					height: 100%;
 					path {
@@ -679,11 +681,100 @@ section {
 				}
 				&:hover {
 					path {
-						fill: #3360FF;
+						fill: $c-blue;
 					}
 					.title {
 						&::after {
 							opacity: 1;
+						}
+						
+					}
+					
+				}
+			}
+		}
+	}
+}
+
+#s4 {
+	border-top: 1px solid $c-border;
+	width: 100%;
+	height: 100vh;
+
+	.fp-overflow {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 10px;
+		padding: 0;
+	}
+	.choose-cont {
+		display: flex;
+		height: 100%;
+		width: 100%;
+		.choose-left {
+			width: calc(50% - 1px);
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 20px;
+			padding-left: 100px;
+			text-transform: uppercase;
+			.choose-title {
+				font-family: $f-r;
+				font-size: 80px;
+			}
+		}
+		.choose-right {
+			display: flex;
+			width: 50%;
+			.choose-var {
+				position: relative;
+				svg {
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 100%;
+					height: 100%;
+					path {
+						fill: transparent;
+						transition: all .3s ease-in-out;
+					}
+				}
+				width: calc((100% / 2) - 1px);
+				border-left: $c-border 1px solid;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				cursor: pointer;
+				.title {
+					position: relative;
+					&::after {
+						position: absolute;
+						content: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-4.37114e-07 10L1.45 8.6L5 12.15L5 -3.0598e-07L7 -2.18557e-07L7 12.15L10.55 8.6L12 10L6 16L-4.37114e-07 10Z' fill='%23E9E9E9'/%3E%3C/svg%3E%0A");
+						top: calc(100% + 10px);
+						left: 50%;
+						transform: translateX(-50%);
+						opacity: 0;
+						transition: opacity .3s ease-in-out;
+					}
+					
+				}
+				&:hover {
+					path {
+						fill: $c-green
+					}
+					.title {
+						color: $c-black;
+						&::after {
+							opacity: 1;
+							content: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-4.37114e-07 10L1.45 8.6L5 12.15L5 -3.0598e-07L7 -2.18557e-07L7 12.15L10.55 8.6L12 10L6 16L-4.37114e-07 10Z' fill='%231A1A1A'/%3E%3C/svg%3E%0A");
+					
 						}
 						
 					}

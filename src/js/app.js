@@ -227,7 +227,7 @@ window.onload = function() {
 new fullpage('#fullpage', {
   //options here
   autoScrolling: true,
-  anchors: ['firstPage', 'secondPage', 'thirdPage'],
+  anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
   lockAnchors: true,
   recordHistory: true,
   afterLoad: function () {
@@ -241,6 +241,18 @@ new fullpage('#fullpage', {
     url_ob.hash = '#' + fullpage_api.getActiveSection().item.id + '';
     var new_url = url_ob.href;
     document.location.href = new_url;
+    if(fullpage_api.getActiveSection().anchor !== 'thirdPage' && fullpage_api.getActiveSection().anchor !== 'fourthPage') {
+      fullpage_api.setAllowScrolling(true, 'all');
+      fullpage_api.setKeyboardScrolling(true, 'all');
+    }
+    if(fullpage_api.getActiveSection().anchor == 'thirdPage') {
+      fullpage_api.setAllowScrolling(false, 'down');
+      fullpage_api.setKeyboardScrolling(false, 'down');
+    }
+    if(fullpage_api.getActiveSection().anchor == 'fourthPage') {
+      fullpage_api.setAllowScrolling(false, 'up');
+      fullpage_api.setKeyboardScrolling(false, 'up');
+    }
   },
   onLeave: function () {
   },
@@ -253,7 +265,11 @@ document.querySelectorAll('.anchor-down').forEach(btn => {
   })
 })
 
-
+document.querySelectorAll('.choose-var').forEach(btn => {
+  btn.addEventListener('click', () => {
+    fullpage_api.moveSectionDown();
+  })
+})
 
 
 
@@ -332,25 +348,30 @@ $('.my-dropdown .my-dropdown-menu li').click(function () {
 
 
 
-let btnsBlue = document.querySelectorAll('#s3 .choose-var');
+let btnsBlue = document.querySelectorAll('.choose-var');
 for (var i = 0; i < btnsBlue.length; i++) {
   let btn = btnsBlue[i];
   let btnWidth = btn.offsetWidth;
   let btnHeight = btn.offsetHeight - document.querySelector('header').offsetHeight;
-  let btnSvg = btn.querySelector('svg');
-  btnSvg.style.width = btnWidth;
+
+  let btnSvg = btn.querySelector('svg')
+  btnSvg.style.width = btnWidth * 2;
   btnSvg.style.height = btnHeight;
   btnSvg.style.top = document.querySelector('header').offsetHeight;
-  btnSvg.setAttribute('viewBox', `0 0 ${btnWidth} ${btnHeight}`)
+  let svgPath = btnSvg.querySelector('path')
+  svgPath.setAttribute('d', `M ${btnWidth} 0 L ${btnWidth * 1.5} 0 Q ${coords.rx} ${btnHeight / 2} ${btnWidth} ${btnHeight} L ${btnWidth} ${btnHeight} Q ${coords.lx} ${btnHeight / 2} ${btnWidth} 0 `)
+  btnSvg.appendChild(svgPath)
+  btnSvg.setAttribute('viewBox', `0 0 ${btnWidth * 2} ${btnHeight}`)
+  btn.insertBefore(btnSvg, btn.firstChild)
   btn.addEventListener('mousemove', (e) => {
     var rect = e.target.getBoundingClientRect();
     let left = e.clientX - rect.left;
     let right = rect.right - e.clientX;
     let diff = (left - right) / 10;
-    coords.rx = 335 + diff;
+    coords.rx = btnWidth * 1.5 + diff;
     coords.ry = (e.clientY - rect.top);
-    coords.lx = 165 + diff;
+    coords.lx = btnWidth / 2 + diff;
     coords.ly = (e.clientY - rect.top);
-    cursor.querySelector('path').setAttribute('d', `M 165 0 L 335 0 Q ${coords.rx} 115 335 230 L 165 230 Q ${coords.lx} 115 165 0 `)
+    btnSvg.querySelector('path').setAttribute('d', `M ${btnWidth} 0 L ${btnWidth * 1.5} 0 Q ${coords.rx} ${btnHeight / 2} ${btnWidth} ${btnHeight} L ${btnWidth} ${btnHeight} Q ${coords.lx} ${btnHeight / 2} ${btnWidth} 0 `)
   });
 }
