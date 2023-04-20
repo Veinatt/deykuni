@@ -113,7 +113,7 @@ new ScrollMagic.Scene({
     document.querySelector('#s2 .acc-fst').click()
     setTimeout(() => {
       enableScroll()
-    }, "1000");
+    }, "3000");
   })
   .addTo(controller);
 new ScrollMagic.Scene({
@@ -127,7 +127,7 @@ new ScrollMagic.Scene({
     document.querySelector('#s2 .acc-snd').click()
     setTimeout(() => {
       enableScroll()
-    }, "1000");
+    }, "3000");
   })
   .addTo(controller);
 new ScrollMagic.Scene({
@@ -141,7 +141,7 @@ new ScrollMagic.Scene({
     document.querySelector('#s2 .acc-trd').click()
     setTimeout(() => {
       enableScroll()
-    }, "1000");
+    }, "3000");
   })
   .addTo(controller);
 new ScrollMagic.Scene({
@@ -155,7 +155,7 @@ new ScrollMagic.Scene({
     document.querySelector('#s2 .acc-fth').click()
     setTimeout(() => {
       enableScroll()
-    }, "1000");
+    }, "3000");
   })
   .addTo(controller);
 
@@ -172,7 +172,7 @@ new ScrollMagic.Scene({
     document.querySelector('#s2 .acc-fst').click()
     setTimeout(() => {
       enableScroll()
-    }, "1000");
+    }, "3000");
   })
   .addTo(controller);
 
@@ -187,7 +187,7 @@ new ScrollMagic.Scene({
     document.querySelector('#s2 .acc-snd').click()
     setTimeout(() => {
       enableScroll()
-    }, "1000");
+    }, "3000");
   })
   .addTo(controller);
 new ScrollMagic.Scene({
@@ -201,7 +201,7 @@ new ScrollMagic.Scene({
     document.querySelector('#s2 .acc-trd').click()
     setTimeout(() => {
       enableScroll()
-    }, "1000");
+    }, "3000");
   })
   .addTo(controller);
 new ScrollMagic.Scene({
@@ -215,7 +215,7 @@ new ScrollMagic.Scene({
     document.querySelector('#s2 .acc-fth').click()
     setTimeout(() => {
       enableScroll()
-    }, "1000");
+    }, "3000");
   })
   .addTo(controller);
 let fpsec = window.sessionStorage.getItem('fpsec');
@@ -227,7 +227,7 @@ window.onload = function() {
 new fullpage('#fullpage', {
   //options here
   autoScrolling: true,
-  anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
+  anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage'],
   lockAnchors: true,
   recordHistory: true,
   afterLoad: function () {
@@ -246,6 +246,8 @@ new fullpage('#fullpage', {
       fullpage_api.setKeyboardScrolling(true, 'all');
     }
     if(fullpage_api.getActiveSection().anchor == 'thirdPage') {
+      fullpage_api.setAllowScrolling(true, 'up');
+      fullpage_api.setKeyboardScrolling(true, 'up');
       fullpage_api.setAllowScrolling(false, 'down');
       fullpage_api.setKeyboardScrolling(false, 'down');
     }
@@ -264,7 +266,11 @@ document.querySelectorAll('.anchor-down').forEach(btn => {
     fullpage_api.moveSectionDown();
   })
 })
-
+document.querySelectorAll('.anchor-up').forEach(btn => {
+  btn.addEventListener('click', () => {
+    fullpage_api.moveSectionUp();
+  })
+})
 document.querySelectorAll('.choose-var').forEach(btn => {
   btn.addEventListener('click', () => {
     fullpage_api.moveSectionDown();
@@ -359,7 +365,7 @@ for (var i = 0; i < btnsBlue.length; i++) {
   btnSvg.style.height = btnHeight;
   btnSvg.style.top = document.querySelector('header').offsetHeight;
   let svgPath = btnSvg.querySelector('path')
-  svgPath.setAttribute('d', `M ${btnWidth} 0 L ${btnWidth * 1.5} 0 Q ${coords.rx} ${btnHeight / 2} ${btnWidth} ${btnHeight} L ${btnWidth} ${btnHeight} Q ${coords.lx} ${btnHeight / 2} ${btnWidth} 0 `)
+  svgPath.setAttribute('d', `M ${btnWidth / 2} 0 L ${btnWidth * 1.5} 0 Q ${btnWidth * 1.5} ${btnHeight / 2} ${btnWidth} ${btnHeight} L ${btnWidth / 2} ${btnHeight} Q ${btnWidth} ${btnHeight / 2} ${btnWidth / 2} 0 `)
   btnSvg.appendChild(svgPath)
   btnSvg.setAttribute('viewBox', `0 0 ${btnWidth * 2} ${btnHeight}`)
   btn.insertBefore(btnSvg, btn.firstChild)
@@ -367,11 +373,11 @@ for (var i = 0; i < btnsBlue.length; i++) {
     var rect = e.target.getBoundingClientRect();
     let left = e.clientX - rect.left;
     let right = rect.right - e.clientX;
-    let diff = (left - right) / 10;
+    let diff = (left - right) / 7;
     coords.rx = btnWidth * 1.5 + diff;
     coords.ry = (e.clientY - rect.top);
     coords.lx = btnWidth / 2 + diff;
     coords.ly = (e.clientY - rect.top);
-    btnSvg.querySelector('path').setAttribute('d', `M ${btnWidth} 0 L ${btnWidth * 1.5} 0 Q ${coords.rx} ${btnHeight / 2} ${btnWidth} ${btnHeight} L ${btnWidth} ${btnHeight} Q ${coords.lx} ${btnHeight / 2} ${btnWidth} 0 `)
+    btnSvg.querySelector('path').setAttribute('d', `M ${btnWidth / 2} 0 L ${btnWidth * 1.5} 0 Q ${coords.rx} ${btnHeight / 2} ${btnWidth * 1.5} ${btnHeight} L ${btnWidth / 2} ${btnHeight} Q ${coords.lx} ${btnHeight / 2} ${btnWidth / 2} 0 `)
   });
 }
