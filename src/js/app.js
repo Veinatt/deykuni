@@ -1,5 +1,6 @@
 // function testWebP(callback) {
 
+
 //   var webP = new Image();
 //   webP.onload = webP.onerror = function () {
 //     callback(webP.height == 1);
@@ -32,6 +33,7 @@ function ready(fn) {
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
+
 
 
 var btnDown = document.querySelector('#s1 .anchor-down');
@@ -219,8 +221,12 @@ new ScrollMagic.Scene({
   })
   .addTo(controller);
 let fpsec = window.sessionStorage.getItem('fpsec');
-window.onload = function() {
+let dt_cat_ls = window.sessionStorage.getItem('category');
+window.onload = function () {
   fullpage_api.silentMoveTo(fpsec);
+  document.querySelectorAll(`[data-rate-category="${dt_cat_ls}"]`).forEach(rate => {
+    rate.style.display = 'block'
+  })
 }
 
 
@@ -241,22 +247,28 @@ new fullpage('#fullpage', {
     url_ob.hash = '#' + fullpage_api.getActiveSection().item.id + '';
     var new_url = url_ob.href;
     document.location.href = new_url;
-    if(fullpage_api.getActiveSection().anchor !== 'thirdPage' && fullpage_api.getActiveSection().anchor !== 'fourthPage') {
+    if (fullpage_api.getActiveSection().anchor !== 'thirdPage' && fullpage_api.getActiveSection().anchor !== 'fourthPage') {
       fullpage_api.setAllowScrolling(true, 'all');
       fullpage_api.setKeyboardScrolling(true, 'all');
     }
-    if(fullpage_api.getActiveSection().anchor == 'thirdPage') {
+    if (fullpage_api.getActiveSection().anchor == 'thirdPage') {
       fullpage_api.setAllowScrolling(true, 'up');
       fullpage_api.setKeyboardScrolling(true, 'up');
       fullpage_api.setAllowScrolling(false, 'down');
       fullpage_api.setKeyboardScrolling(false, 'down');
     }
-    if(fullpage_api.getActiveSection().anchor == 'fourthPage') {
+    if (fullpage_api.getActiveSection().anchor == 'fourthPage') {
       fullpage_api.setAllowScrolling(false, 'up');
       fullpage_api.setKeyboardScrolling(false, 'up');
+      fullpage_api.setAllowScrolling(false, 'down');
+      fullpage_api.setKeyboardScrolling(false, 'down');
     }
   },
-  onLeave: function () {
+  onLeave: function (direction) {
+    if (fullpage_api.getActiveSection().anchor == 'fourthPage' && direction == 'down' && ) {
+      fullpage_api.setAllowScrolling(true, 'all');
+      fullpage_api.setKeyboardScrolling(true, 'all');
+    }
   },
 });
 
@@ -381,3 +393,16 @@ for (var i = 0; i < btnsBlue.length; i++) {
     btnSvg.querySelector('path').setAttribute('d', `M ${btnWidth / 2} 0 L ${btnWidth * 1.5} 0 Q ${coords.rx} ${btnHeight / 2} ${btnWidth * 1.5} ${btnHeight} L ${btnWidth / 2} ${btnHeight} Q ${coords.lx} ${btnHeight / 2} ${btnWidth / 2} 0 `)
   });
 }
+
+document.querySelectorAll('.dt-category').forEach(cat => {
+  cat.addEventListener('click', () => {
+    document.querySelectorAll(`.rate`).forEach(rate => {
+      rate.style.display = 'none'
+    })
+    let dt_cat = cat.getAttribute('data-category');
+    window.sessionStorage.setItem('category', dt_cat)
+    document.querySelectorAll(`[data-rate-category="${dt_cat}"]`).forEach(rate => {
+      rate.style.display = 'block'
+    })
+  })
+})

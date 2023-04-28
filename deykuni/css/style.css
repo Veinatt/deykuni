@@ -203,9 +203,16 @@ button:focus {
   font-style: normal;
 }
 
+@font-face {
+  font-family: MabryPro-Italic;
+  font-display: swap;
+  src: url("../fonts/MabryPro-Italic.woff2") format("woff2"), url("../fonts/MabryPro-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
-  --clip-position-x: center;
-  --clip-position-y: center;
+  --header-h: 0;
 }
 
 a,
@@ -559,7 +566,7 @@ section {
 }
 
 #s2 .main-title {
-  padding-top: 210px;
+  padding-top: 160px;
 }
 
 #s2 .acc-cont {
@@ -760,7 +767,7 @@ header .header-cont {
   align-items: center;
   border-bottom: 1px solid transparent;
   width: 100%;
-  padding: 65px 100px;
+  padding: 40px 100px;
   line-height: 1em;
   transition: all 0.3s ease-in-out;
 }
@@ -768,6 +775,11 @@ header .header-cont {
 header .header-cont.active {
   background-color: #1A1A1A;
   border-bottom: 1px solid #343434;
+}
+
+header .menu-btn {
+  display: flex;
+  align-items: center;
 }
 
 header .logo {
@@ -830,11 +842,10 @@ header .my-dropdown .my-dropdown-menu {
   left: 0;
   overflow: hidden;
   display: none;
-  margin-top: 0.35em;
 }
 
 header .my-dropdown .my-dropdown-menu li {
-  padding: 0.3em 0;
+  padding: 0.25em 0;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
@@ -976,6 +987,10 @@ header .my-dropdown .my-dropdown-menu {
   border-left: 1px solid transparent;
 }
 
+#s4 {
+  border-bottom: 1px solid #343434;
+}
+
 #s4 .choose-cont .choose-right .choose-var {
   width: calc(50% - 1px);
 }
@@ -990,4 +1005,71 @@ header .my-dropdown .my-dropdown-menu {
 
 #s4 .choose-cont .choose-right .choose-var:hover .title::after {
   content: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-4.37114e-07 10L1.45 8.6L5 12.15L5 -3.0598e-07L7 -2.18557e-07L7 12.15L10.55 8.6L12 10L6 16L-4.37114e-07 10Z' fill='%231A1A1A'/%3E%3C/svg%3E%0A");
+}
+
+#s5 {
+  padding-top: 160px;
+  position: relative;
+}
+
+#s5 .main-title {
+  text-transform: uppercase;
+}
+
+#s5 .sub-text {
+  font-family: MabryPro-Regular;
+  font-size: 24px;
+  margin-top: 10px;
+  color: #777;
+}
+
+#s5 .need-help {
+  margin-top: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  outline: none;
+  font-family: MabryPro-Italic;
+  font-size: 24px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#s5 .rate-cont {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 40px;
+}
+
+#s5 .rate-cont .rate {
+  display: none;
+  width: calc((100% - 80px) / 3);
+}
+
+#s5 .rate-cont .rate .rate-cat-text {
+  margin-top: 5px;
+  font-family: MabryPro-Regular;
+  font-size: 20px;
+  color: #777;
+}
+
+#s5 .rate-cont .rate .title {
+  margin-top: 5px;
+  font-size: 30px;
+  font-family: MabryPro-Regular;
+  text-transform: uppercase;
+}
+
+#s5 .rate-cont .rate .img-cont {
+  width: 100%;
+  aspect-ratio: 546/277;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#s5 .rate-cont .rate .img-cont img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }

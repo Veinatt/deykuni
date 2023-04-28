@@ -19,8 +19,7 @@
 // }
 
 :root {
-	--clip-position-x: center;
-	--clip-position-y: center;
+	--header-h: 0;
 }
 
 $c-white: #e9e9e9;
@@ -41,8 +40,9 @@ $c-pink: #E233FF;
 $f-b: MabryPro-Bold;
 $f-m: MabryPro-Medium;
 $f-l: MabryPro-Light;
+$f-i: MabryPro-Italic;
 $f-r: MabryPro-Regular;
-$h-s: 160px;
+$h-s: 110px;
 
 body {
 	background-color: $c-black;
@@ -714,6 +714,7 @@ section {
 }
 
 #s4 {
+	border-bottom: 1px solid $c-border;
 	.choose-cont {
 		.choose-right {
 			.choose-var {
@@ -728,6 +729,64 @@ section {
 							content: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-4.37114e-07 10L1.45 8.6L5 12.15L5 -3.0598e-07L7 -2.18557e-07L7 12.15L10.55 8.6L12 10L6 16L-4.37114e-07 10Z' fill='%231A1A1A'/%3E%3C/svg%3E%0A");
 						}	
 					}
+				}
+			}
+		}
+	}
+}
+
+#s5 {
+	padding-top: calc($h-s + 50px);
+	position: relative;
+	
+
+
+	.main-title {
+		text-transform: uppercase;
+	}
+	.sub-text {
+		font-family: $f-r;
+		font-size: 24px;
+		margin-top: 10px;
+		color: $c-gray;
+	}
+	.need-help {
+		margin-top: 30px;
+		user-select: none;
+		outline: none;
+		font-family: $f-i;
+		font-size: 24px;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	.rate-cont {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 30px;
+		gap: 40px;
+		.rate {
+			display: none;
+			width: calc((100% - 80px) / 3);
+			.rate-cat-text {
+				margin-top: 5px;
+				font-family: $f-r;
+				font-size: 20px;
+				color: $c-gray;
+			}
+			.title {
+				margin-top: 5px;
+				font-size: 30px;
+				font-family: $f-r;
+				text-transform: uppercase;
+			}
+			.img-cont {
+				width: 100%;
+				aspect-ratio: 546/277;
+				border-radius: 20px;
+				overflow: hidden;
+				img {
+					object-fit: cover;
 				}
 			}
 		}

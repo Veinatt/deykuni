@@ -10,13 +10,17 @@ header {
         align-items: center;
         border-bottom: 1px solid transparent;
         width: 100%;
-        padding: 65px 100px;
+        padding: 40px 100px;
         line-height: 1em;
         transition: all .3s ease-in-out;
         &.active {
             background-color: $c-black;
             border-bottom: 1px solid $c-border;
         }
+    }
+    .menu-btn {
+        display: flex;
+        align-items: center;
     }
     .logo {
         display: grid;
@@ -71,11 +75,10 @@ header {
         left: 0;
         overflow: hidden;
         display: none;
-        margin-top: .35em;
     }
 
     .my-dropdown .my-dropdown-menu li {
-        padding: .3em 0;
+        padding: .25em 0;
         transition: all .2s ease-in-out;
         cursor: pointer
     }
