@@ -1,6 +1,7 @@
 // function testWebP(callback) {
 
 
+
 //   var webP = new Image();
 //   webP.onload = webP.onerror = function () {
 //     callback(webP.height == 1);
@@ -222,11 +223,29 @@ new ScrollMagic.Scene({
   .addTo(controller);
 let fpsec = window.sessionStorage.getItem('fpsec');
 let dt_cat_ls = window.sessionStorage.getItem('category');
+let rate_anim = window.sessionStorage.getItem('rate_anim');
+
+function disableRateAnim() {
+  document.querySelector('#s5 .sub-text').classList.add('rate-anim-disabled')
+  document.querySelector('#s5 .need-help').classList.add('rate-anim-disabled')
+  document.querySelector('#s5 .rate-cont').classList.add('rate-anim-disabled')
+  document.querySelector('#s5 .main-title').classList.add('rate-anim-disabled')
+}
+function enableRateAnim() {
+  document.querySelector('#s5 .sub-text').classList.remove('rate-anim-disabled')
+  document.querySelector('#s5 .need-help').classList.remove('rate-anim-disabled')
+  document.querySelector('#s5 .rate-cont').classList.remove('rate-anim-disabled')
+  document.querySelector('#s5 .main-title').classList.remove('rate-anim-disabled')
+}
+
 window.onload = function () {
   fullpage_api.silentMoveTo(fpsec);
   document.querySelectorAll(`[data-rate-category="${dt_cat_ls}"]`).forEach(rate => {
     rate.style.display = 'block'
   })
+  if (rate_anim === null) {
+    disableRateAnim();
+  }
 }
 
 
@@ -236,7 +255,7 @@ new fullpage('#fullpage', {
   anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage'],
   lockAnchors: true,
   recordHistory: true,
-  afterLoad: function () {
+  afterLoad: function() {
     window.sessionStorage.setItem('fpsec', fullpage_api.getActiveSection().anchor)
     if (document.querySelector('#s1').classList.contains('active')) {
       document.querySelector('.header-cont').classList.remove('active')
@@ -251,23 +270,24 @@ new fullpage('#fullpage', {
       fullpage_api.setAllowScrolling(true, 'all');
       fullpage_api.setKeyboardScrolling(true, 'all');
     }
-    if (fullpage_api.getActiveSection().anchor == 'thirdPage') {
+    if (fullpage_api.getActiveSection().anchor === 'thirdPage') {
       fullpage_api.setAllowScrolling(true, 'up');
       fullpage_api.setKeyboardScrolling(true, 'up');
       fullpage_api.setAllowScrolling(false, 'down');
       fullpage_api.setKeyboardScrolling(false, 'down');
     }
-    if (fullpage_api.getActiveSection().anchor == 'fourthPage') {
+    if (fullpage_api.getActiveSection().anchor === 'fourthPage') {
       fullpage_api.setAllowScrolling(false, 'up');
       fullpage_api.setKeyboardScrolling(false, 'up');
       fullpage_api.setAllowScrolling(false, 'down');
       fullpage_api.setKeyboardScrolling(false, 'down');
     }
   },
-  onLeave: function (direction) {
-    if (fullpage_api.getActiveSection().anchor == 'fourthPage' && direction == 'down' && ) {
-      fullpage_api.setAllowScrolling(true, 'all');
-      fullpage_api.setKeyboardScrolling(true, 'all');
+  onLeave: function(origin, destination, direction) {
+    console.log(direction);
+    if (fullpage_api.getActiveSection().anchor === 'fourthPage' && direction == 'down' && rate_anim === null) {
+      window.sessionStorage.setItem('rate_anim', 'disabled')
+      enableRateAnim();
     }
   },
 });
