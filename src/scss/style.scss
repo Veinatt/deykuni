@@ -743,8 +743,8 @@ section {
 		text-transform: uppercase;
 		padding-top: 0;
 		opacity: 1;
-		transition: opacity .5s ease-in-out, padding-top .5s ease-in-out;
-		transition-delay: .5s, 1.5s;
+		transition: opacity .5s ease-out, padding-top .7s ease-out;
+		transition-delay: .7s, 2s;
 		&.rate-anim-disabled {
 			opacity: 0;
 			padding-top: calc(50vh - 1em - ($h-s + 50px));
@@ -756,8 +756,8 @@ section {
 		margin-top: 10px;
 		color: $c-gray;
 		opacity: 1;
-		transition: opacity .5s ease-in-out;
-		transition-delay:  2.5s;
+		transition: opacity .5s ease-out;
+		transition-delay:  3.5s;
 		&.rate-anim-disabled {
 			opacity: 0;
 		}
@@ -771,8 +771,8 @@ section {
 		text-decoration: underline;
 		cursor: pointer;
 		opacity: 1;
-		transition: opacity .5s ease-in-out;
-		transition-delay:  2.5s;
+		transition: opacity .5s ease-out;
+		transition-delay:  3.5s;
 		&.rate-anim-disabled {
 			opacity: 0;
 		}
@@ -784,14 +784,16 @@ section {
 		margin-top: 30px;
 		gap: 40px;
 		opacity: 1;
-		transition: opacity .5s ease-in-out;
-		transition-delay:  2.5s;
+		transition: opacity .5s ease-out;
+		transition-delay:  3.5s;
 		&.rate-anim-disabled {
 			opacity: 0;
 		}
 		.rate {
+			cursor: pointer;
 			display: none;
 			width: calc((100% - 80px) / 3);
+			
 			.rate-cat-text {
 				margin-top: 5px;
 				font-family: $f-r;
@@ -811,6 +813,72 @@ section {
 				overflow: hidden;
 				img {
 					object-fit: cover;
+				}
+			}
+			&:hover {
+				.title {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+#s6 {
+	padding-top: calc($h-s + 50px);
+	position: relative;
+	.anchor-down {
+		opacity: 1;
+		transition: opacity .5s ease-out;
+		transition-delay: 4s;
+		&.rate-anim-disabled {
+			opacity: 0;
+		}
+
+	}
+	.main-title {
+		text-transform: uppercase;
+		padding-top: 0;
+		opacity: 1;
+		transition: opacity .5s ease-out, padding-top .7s ease-out;
+		transition-delay: .7s, 2s;
+		&.rate-anim-disabled {
+			opacity: 0;
+			padding-top: calc(50vh - 1em - ($h-s + 50px));
+		}
+	}
+	.point-cont {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 30px;
+		gap: 40px;
+		opacity: 1;
+		transition: opacity .5s ease-out;
+		transition-delay:  3.5s;
+		align-items: flex-start;
+		&.rate-anim-disabled {
+			opacity: 0;
+		}
+		.rate-point {
+			display: none;
+			width: calc((100% - 80px) / 3);
+			border-radius: 20px;
+			border: $c-border 1px solid;
+			padding: 40px;
+			flex-direction: column;
+			gap: 20px;
+			.point-text {
+				font-size: 24px;
+				font-family: $f-r;
+			}
+			.point-title {
+				font-size: 30px;
+				font-family: $f-l;
+				color: $c-gray;
+				&::before {
+					content: '\2014';
+					margin-right: 10px;
 				}
 			}
 		}

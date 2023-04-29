@@ -88,142 +88,144 @@ for (var i = 0; i < texts.length; i++) {
   });
 }
 
-function preventScroll(e) {
-  e.preventDefault();
-  e.stopPropagation();
+// function preventScroll(e) {
+//   e.preventDefault();
+//   e.stopPropagation();
 
-  return false;
-}
+//   return false;
+// }
 
-function disableScroll() {
-  document.querySelector('.s2-overflow').addEventListener('wheel', preventScroll);
-}
+// function disableScroll() {
+//   document.querySelector('.s2-overflow').addEventListener('wheel', preventScroll);
+// }
 
-function enableScroll() {
-  document.querySelector('.s2-overflow  ').removeEventListener('wheel', preventScroll);
-}
-
-
-const controller = new ScrollMagic.Controller();
-
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    duration: 1,
-    triggerHook: 0,
-  })
-  .on("enter", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-fst').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 100,
-    duration: 1,
-    triggerHook: 0,
-  })
-  .on("enter", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-snd').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 200,
-    duration: 1,
-    triggerHook: 0,
-  })
-  .on("enter", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-trd').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 300,
-    duration: 1,
-    triggerHook: 0,
-  })
-  .on("enter", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-fth').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
+// function enableScroll() {
+//   document.querySelector('.s2-overflow  ').removeEventListener('wheel', preventScroll);
+// }
 
 
+// const controller = new ScrollMagic.Controller();
 
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 100,
-    duration: 0,
-    triggerHook: 0,
-  })
-  .on("leave", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-fst').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     duration: 1,
+//     triggerHook: 0,
+//   })
+//   .on("enter", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-fst').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 100,
+//     duration: 1,
+//     triggerHook: 0,
+//   })
+//   .on("enter", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-snd').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 200,
+//     duration: 1,
+//     triggerHook: 0,
+//   })
+//   .on("enter", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-trd').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 300,
+//     duration: 1,
+//     triggerHook: 0,
+//   })
+//   .on("enter", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-fth').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
 
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 200,
-    duration: 0,
-    triggerHook: 0,
-  })
-  .on("leave", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-snd').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 300,
-    duration: 0,
-    triggerHook: 0,
-  })
-  .on("leave", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-trd').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
-new ScrollMagic.Scene({
-    triggerElement: '.s2-overflow',
-    offset: 400,
-    duration: 0,
-    triggerHook: 0,
-  })
-  .on("leave", function (event) {
-    disableScroll()
-    document.querySelector('#s2 .acc-fth').click()
-    setTimeout(() => {
-      enableScroll()
-    }, "3000");
-  })
-  .addTo(controller);
+
+
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 100,
+//     duration: 0,
+//     triggerHook: 0,
+//   })
+//   .on("leave", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-fst').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 200,
+//     duration: 0,
+//     triggerHook: 0,
+//   })
+//   .on("leave", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-snd').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 300,
+//     duration: 0,
+//     triggerHook: 0,
+//   })
+//   .on("leave", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-trd').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
+// new ScrollMagic.Scene({
+//     triggerElement: '.s2-overflow',
+//     offset: 400,
+//     duration: 0,
+//     triggerHook: 0,
+//   })
+//   .on("leave", function (event) {
+//     disableScroll()
+//     document.querySelector('#s2 .acc-fth').click()
+//     setTimeout(() => {
+//       enableScroll()
+//     }, "3000");
+//   })
+//   .addTo(controller);
 let fpsec = window.sessionStorage.getItem('fpsec');
 let dt_cat_ls = window.sessionStorage.getItem('category');
+let dt_rate_ls = window.sessionStorage.getItem('rate');
 let rate_anim = window.sessionStorage.getItem('rate_anim');
+let point_anim = window.sessionStorage.getItem('point_anim');
 
 function disableRateAnim() {
   document.querySelector('#s5 .sub-text').classList.add('rate-anim-disabled')
@@ -237,14 +239,38 @@ function enableRateAnim() {
   document.querySelector('#s5 .rate-cont').classList.remove('rate-anim-disabled')
   document.querySelector('#s5 .main-title').classList.remove('rate-anim-disabled')
 }
+function disablePointAnim() {
+  document.querySelector('#s6 .point-cont').classList.add('rate-anim-disabled')
+  document.querySelector('#s6 .anchor-down').classList.add('rate-anim-disabled')
+  document.querySelector('#s6 .main-title').classList.add('rate-anim-disabled')
+}
+function enablePointAnim() {
+  document.querySelector('#s6 .point-cont').classList.remove('rate-anim-disabled')
+  document.querySelector('#s6 .anchor-down').classList.remove('rate-anim-disabled')
+  document.querySelector('#s6 .main-title').classList.remove('rate-anim-disabled')
+}
+// const values = [1, 3, 5, 10, 20, 50, 100];
 
+// const input = document.getElementById('input'),
+//     output = document.getElementById('output');
+
+// input.oninput = function() {
+//     output.innerHTML = values[this.value];
+// };
 window.onload = function () {
+  // input.oninput();
   fullpage_api.silentMoveTo(fpsec);
   document.querySelectorAll(`[data-rate-category="${dt_cat_ls}"]`).forEach(rate => {
     rate.style.display = 'block'
   })
+  document.querySelectorAll(`[data-point-rate="${dt_rate_ls}"]`).forEach(rate => {
+    rate.style.display = 'flex'
+  })
   if (rate_anim === null) {
     disableRateAnim();
+  }
+  if (point_anim === null) {
+    disablePointAnim();
   }
 }
 
@@ -252,7 +278,7 @@ window.onload = function () {
 new fullpage('#fullpage', {
   //options here
   autoScrolling: true,
-  anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage'],
+  anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'sixthPage'],
   lockAnchors: true,
   recordHistory: true,
   afterLoad: function() {
@@ -282,12 +308,20 @@ new fullpage('#fullpage', {
       fullpage_api.setAllowScrolling(false, 'down');
       fullpage_api.setKeyboardScrolling(false, 'down');
     }
+    if (fullpage_api.getActiveSection().anchor === 'fifthPage') {
+      fullpage_api.setAllowScrolling(false, 'down');
+      fullpage_api.setKeyboardScrolling(false, 'down');
+    }
   },
   onLeave: function(origin, destination, direction) {
     console.log(direction);
     if (fullpage_api.getActiveSection().anchor === 'fourthPage' && direction == 'down' && rate_anim === null) {
       window.sessionStorage.setItem('rate_anim', 'disabled')
       enableRateAnim();
+    }
+    if (fullpage_api.getActiveSection().anchor === 'fifthPage' && direction == 'down' && point_anim === null) {
+      window.sessionStorage.setItem('point_anim', 'disabled')
+      enablePointAnim();
     }
   },
 });
@@ -308,7 +342,11 @@ document.querySelectorAll('.choose-var').forEach(btn => {
     fullpage_api.moveSectionDown();
   })
 })
-
+document.querySelectorAll('.rate').forEach(btn => {
+  btn.addEventListener('click', () => {
+    fullpage_api.moveSectionDown();
+  })
+})
 
 
 var acc = document.getElementsByClassName("accordion");
@@ -335,6 +373,8 @@ document.querySelectorAll('.acc').forEach(acc => {
     }
   });
 })
+
+
 document.querySelector('.acc.acc-fst').addEventListener("click", function () {
   document.querySelector('.acc-fst-img').classList.add('active')
   setTimeout(() => {
@@ -367,6 +407,8 @@ document.querySelector('.acc.acc-fth').addEventListener("click", function () {
     })
   }, '2000');
 });
+document.querySelector('#defAccordion').click()
+
 $('.my-dropdown').click(function () {
   $(this).attr('tabindex', 1).focus();
   $(this).toggleClass('active');
@@ -416,13 +458,26 @@ for (var i = 0; i < btnsBlue.length; i++) {
 
 document.querySelectorAll('.dt-category').forEach(cat => {
   cat.addEventListener('click', () => {
-    document.querySelectorAll(`.rate`).forEach(rate => {
+    document.querySelectorAll('.rate').forEach(rate => {
       rate.style.display = 'none'
     })
     let dt_cat = cat.getAttribute('data-category');
     window.sessionStorage.setItem('category', dt_cat)
     document.querySelectorAll(`[data-rate-category="${dt_cat}"]`).forEach(rate => {
       rate.style.display = 'block'
+    })
+  })
+})
+
+document.querySelectorAll('.rate').forEach(cat => {
+  cat.addEventListener('click', () => {
+    document.querySelectorAll('.rate-point').forEach(rate => {
+      rate.style.display = 'none'
+    })
+    let dt_cat = cat.getAttribute('data-rate');
+    window.sessionStorage.setItem('rate', dt_cat)
+    document.querySelectorAll(`[data-point-rate="${dt_cat}"]`).forEach(rate => {
+      rate.style.display = 'flex'
     })
   })
 })

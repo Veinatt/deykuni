@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css?_v=20230429145756" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20230429145756" />
     <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.18/fullpage.min.css" />
-    <link rel="stylesheet" href="css/style.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.18/fullpage.min.css?_v=20230429145756" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20230429145756">
     <title>DEYKUN | Маркетинг</title>
 </head>
 
@@ -25,7 +25,7 @@
             </svg>
         </div>
         <div class="logo">
-            <img src="img/logo.png" alt="">
+            <picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt=""></picture>
         </div>
         <div class="right-col">
 
@@ -508,7 +508,7 @@
                         НАШИ САЙТЫ ДЛЯ ТЕХ КТО ХОЧЕТ
                     </div>
                     <div class="acc-cont">
-                        <button class="acc acc-fst">РАСШИРИТЬ АУДИТОРИЮ</button>
+                        <button class="acc acc-fst" id="defAccordion">РАСШИРИТЬ АУДИТОРИЮ</button>
                         <div class="panel">
                             <p>Благодаря сайту вы получаете постоянный приток клиентов из онлайн пространства. Для этого
                                 не
@@ -898,9 +898,9 @@
             </div>
             <div class="sub-text">если не уверены в выборе нажмите на кнопку под вариантами, и мы поможем Вам в выборе</div>
             <div class="rate-cont">
-                <div class="rate" data-rate-category="category-fst">
+                <div class="rate" data-rate-category="category-fst" data-rate="rate-fst">
                     <div class="img-cont">
-                        <img src="img/blue-rate.png" alt="">
+                        <picture><source srcset="img/blue-rate.webp" type="image/webp"><img src="img/blue-rate.png" alt=""></picture>
                     </div>
                     <div class="rate-cat-text">
                         для индивидуального предпринимателя
@@ -909,9 +909,9 @@
                         Taplink
                     </div>
                 </div>
-                <div class="rate" data-rate-category="category-snd">
+                <div class="rate" data-rate-category="category-snd" data-rate="rate-snd">
                     <div class="img-cont">
-                        <img src="img/blue-rate.png" alt="">
+                        <picture><source srcset="img/blue-rate.webp" type="image/webp"><img src="img/blue-rate.png" alt=""></picture>
                     </div>
                     <div class="rate-cat-text">
                         для малого/среднего бизнеса
@@ -920,9 +920,9 @@
                         Taplink
                     </div>
                 </div>
-                <div class="rate" data-rate-category="category-snd">
+                <div class="rate" data-rate-category="category-snd" data-rate="rate-trd">
                     <div class="img-cont">
-                        <img src="img/green-rate.png" alt="">
+                        <picture><source srcset="img/green-rate.webp" type="image/webp"><img src="img/green-rate.png" alt=""></picture>
                     </div>
                     <div class="rate-cat-text">
                         для малого/среднего бизнеса
@@ -931,9 +931,9 @@
                         Лeндинг до 5 блоков
                     </div>
                 </div>
-                <div class="rate" data-rate-category="category-snd">
+                <div class="rate" data-rate-category="category-snd" data-rate="rate-frth">
                     <div class="img-cont">
-                        <img src="img/pink-rate.png" alt="">
+                        <picture><source srcset="img/pink-rate.webp" type="image/webp"><img src="img/pink-rate.png" alt=""></picture>
                     </div>
                     <div class="rate-cat-text">
                         для малого/среднего бизнеса
@@ -942,9 +942,9 @@
                         Интерактивный квиз
                     </div>
                 </div>
-                <div class="rate" data-rate-category="category-trd">
+                <div class="rate" data-rate-category="category-trd" data-rate="rate-fth">
                     <div class="img-cont">
-                        <img src="img/blue-rate.png" alt="">
+                        <picture><source srcset="img/blue-rate.webp" type="image/webp"><img src="img/blue-rate.png" alt=""></picture>
                     </div>
                     <div class="rate-cat-text">
                         для крупной компании
@@ -953,9 +953,9 @@
                         Taplink
                     </div>
                 </div>
-                <div class="rate" data-rate-category="category-trd">
+                <div class="rate" data-rate-category="category-trd" data-rate="rate-sth">
                     <div class="img-cont">
-                        <img src="img/green-rate.png" alt="">
+                        <picture><source srcset="img/green-rate.webp" type="image/webp"><img src="img/green-rate.png" alt=""></picture>
                     </div>
                     <div class="rate-cat-text">
                         для крупной компании
@@ -968,25 +968,114 @@
             <div class="need-help">
                 нужна помощь с выбором
             </div>
+            <!-- <input id="input" type="range" min="0" value="0" max="6" step="1">
+            <div id="output"></div> -->
+        </section>
+        <section class="section" id="s6">
+            <div class="anchor-down">
+                <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M5.46967 23.5303C5.76256 23.8232 6.23744 23.8232 6.53033 23.5303L11.3033 18.7574C11.5962 18.4645 11.5962 17.9896 11.3033 17.6967C11.0104 17.4038 10.5355 17.4038 10.2426 17.6967L6 21.9393L1.75736 17.6967C1.46447 17.4038 0.989594 17.4038 0.6967 17.6967C0.403807 17.9896 0.403807 18.4645 0.696701 18.7574L5.46967 23.5303ZM5.25 5.69613e-08L5.25 23L6.75 23L6.75 -5.69613e-08L5.25 5.69613e-08Z"
+                        fill="#1A1A1A" />
+                </svg>
+            </div>
+            <div class="main-title">
+                Что входит?
+            </div>
+            <div class="point-cont">
+                <div class="rate-point" data-point-rate="rate-fst">
+                    <div class="point-title">маркетинговая часть</div>
+                    <div class="point-text">Первичный аудит</div>
+                    <div class="point-text">Подбор подходящих решений</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-fst">
+                    <div class="point-title">разработка</div>
+                    <div class="point-text">Прототипирование сайта</div>
+                    <div class="point-text">Разработка дизайна</div>
+                    <div class="point-text">Вёрстка сайта</div>
+                    <div class="point-text">Размещение на хостинге</div>
+                    <div class="point-text">Подключение метрик и систем аналитики</div>
+                    <div class="point-text">Первичная SEO оптимизация</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-fst">
+                    <div class="point-title">бонус</div>
+                    <div class="point-text">Обучение использованию ресурса</div>
+                    <div class="point-text">Гарантия 3 месяца</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-snd">
+                    <div class="point-title">маркетинговая часть</div>
+                    <div class="point-text">Первичный аудит</div>
+                    <div class="point-text">Подбор подходящих решений</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-trd">
+                    <div class="point-title">разработка</div>
+                    <div class="point-text">Прототипирование сайта</div>
+                    <div class="point-text">Разработка дизайна</div>
+                    <div class="point-text">Вёрстка сайта</div>
+                    <div class="point-text">Размещение на хостинге</div>
+                    <div class="point-text">Подключение метрик и систем аналитики</div>
+                    <div class="point-text">Первичная SEO оптимизация</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-frth">
+                    <div class="point-title">разработка</div>
+                    <div class="point-text">Прототипирование сайта</div>
+                    <div class="point-text">Разработка дизайна</div>
+                    <div class="point-text">Вёрстка сайта</div>
+                    <div class="point-text">Размещение на хостинге</div>
+                    <div class="point-text">Подключение метрик и систем аналитики</div>
+                    <div class="point-text">Первичная SEO оптимизация</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-frth">
+                    <div class="point-title">бонус</div>
+                    <div class="point-text">Обучение использованию ресурса</div>
+                    <div class="point-text">Гарантия 3 месяца</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-fth">
+                    <div class="point-title">маркетинговая часть</div>
+                    <div class="point-text">Первичный аудит</div>
+                    <div class="point-text">Подбор подходящих решений</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-fth">
+                    <div class="point-title">разработка</div>
+                    <div class="point-text">Прототипирование сайта</div>
+                    <div class="point-text">Разработка дизайна</div>
+                    <div class="point-text">Вёрстка сайта</div>
+                    <div class="point-text">Размещение на хостинге</div>
+                    <div class="point-text">Подключение метрик и систем аналитики</div>
+                    <div class="point-text">Первичная SEO оптимизация</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-fth">
+                    <div class="point-title">бонус</div>
+                    <div class="point-text">Обучение использованию ресурса</div>
+                    <div class="point-text">Гарантия 3 месяца</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-sth">
+                    <div class="point-title">маркетинговая часть</div>
+                    <div class="point-text">Первичный аудит</div>
+                    <div class="point-text">Подбор подходящих решений</div>
+                </div>
+            </div>
+            <!-- <input id="input" type="range" min="0" value="0" max="6" step="1">
+            <div id="output"></div> -->
         </section>
     </div>
     
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20230429145756"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js?_v=20230429145756"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js?_v=20230429145756"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js?_v=20230429145756"
         integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"
         integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js?_v=20230429145756"
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- <script>
         var result = bowser.getParser(window.navigator.userAgent);
@@ -995,10 +1084,10 @@
             document.querySelector('body').classList.add('safari-build')
         }
     </script> -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.18/fullpage.min.js">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.18/fullpage.min.js?_v=20230429145756">
     </script>
-    <script src="js/app.min.js"></script>
-    <script src="files/form.js"></script>
+    <script src="js/app.min.js?_v=20230429145756"></script>
+    <script src="files/form.js?_v=20230429145756"></script>
     </script>
 
 </body>

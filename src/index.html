@@ -54,7 +54,7 @@
                         НАШИ САЙТЫ ДЛЯ ТЕХ КТО ХОЧЕТ
                     </div>
                     <div class="acc-cont">
-                        <button class="acc acc-fst">РАСШИРИТЬ АУДИТОРИЮ</button>
+                        <button class="acc acc-fst" id="defAccordion">РАСШИРИТЬ АУДИТОРИЮ</button>
                         <div class="panel">
                             <p>Благодаря сайту вы получаете постоянный приток клиентов из онлайн пространства. Для этого
                                 не
@@ -220,7 +220,7 @@
             </div>
             <div class="sub-text">если не уверены в выборе нажмите на кнопку под вариантами, и мы поможем Вам в выборе</div>
             <div class="rate-cont">
-                <div class="rate" data-rate-category="category-fst">
+                <div class="rate" data-rate-category="category-fst" data-rate="rate-fst">
                     <div class="img-cont">
                         <img src="img/blue-rate.png" alt="">
                     </div>
@@ -231,7 +231,7 @@
                         Taplink
                     </div>
                 </div>
-                <div class="rate" data-rate-category="category-snd">
+                <div class="rate" data-rate-category="category-snd" data-rate="rate-snd">
                     <div class="img-cont">
                         <img src="img/blue-rate.png" alt="">
                     </div>
@@ -242,7 +242,7 @@
                         Taplink
                     </div>
                 </div>
-                <div class="rate" data-rate-category="category-snd">
+                <div class="rate" data-rate-category="category-snd" data-rate="rate-trd">
                     <div class="img-cont">
                         <img src="img/green-rate.png" alt="">
                     </div>
@@ -253,7 +253,7 @@
                         Лeндинг до 5 блоков
                     </div>
                 </div>
-                <div class="rate" data-rate-category="category-snd">
+                <div class="rate" data-rate-category="category-snd" data-rate="rate-frth">
                     <div class="img-cont">
                         <img src="img/pink-rate.png" alt="">
                     </div>
@@ -264,7 +264,7 @@
                         Интерактивный квиз
                     </div>
                 </div>
-                <div class="rate" data-rate-category="category-trd">
+                <div class="rate" data-rate-category="category-trd" data-rate="rate-fth">
                     <div class="img-cont">
                         <img src="img/blue-rate.png" alt="">
                     </div>
@@ -275,7 +275,7 @@
                         Taplink
                     </div>
                 </div>
-                <div class="rate" data-rate-category="category-trd">
+                <div class="rate" data-rate-category="category-trd" data-rate="rate-sth">
                     <div class="img-cont">
                         <img src="img/green-rate.png" alt="">
                     </div>
@@ -290,6 +290,95 @@
             <div class="need-help">
                 нужна помощь с выбором
             </div>
+            <!-- <input id="input" type="range" min="0" value="0" max="6" step="1">
+            <div id="output"></div> -->
+        </section>
+        <section class="section" id="s6">
+            <div class="anchor-down">
+                <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M5.46967 23.5303C5.76256 23.8232 6.23744 23.8232 6.53033 23.5303L11.3033 18.7574C11.5962 18.4645 11.5962 17.9896 11.3033 17.6967C11.0104 17.4038 10.5355 17.4038 10.2426 17.6967L6 21.9393L1.75736 17.6967C1.46447 17.4038 0.989594 17.4038 0.6967 17.6967C0.403807 17.9896 0.403807 18.4645 0.696701 18.7574L5.46967 23.5303ZM5.25 5.69613e-08L5.25 23L6.75 23L6.75 -5.69613e-08L5.25 5.69613e-08Z"
+                        fill="#1A1A1A" />
+                </svg>
+            </div>
+            <div class="main-title">
+                Что входит?
+            </div>
+            <div class="point-cont">
+                <div class="rate-point" data-point-rate="rate-fst">
+                    <div class="point-title">маркетинговая часть</div>
+                    <div class="point-text">Первичный аудит</div>
+                    <div class="point-text">Подбор подходящих решений</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-fst">
+                    <div class="point-title">разработка</div>
+                    <div class="point-text">Прототипирование сайта</div>
+                    <div class="point-text">Разработка дизайна</div>
+                    <div class="point-text">Вёрстка сайта</div>
+                    <div class="point-text">Размещение на хостинге</div>
+                    <div class="point-text">Подключение метрик и систем аналитики</div>
+                    <div class="point-text">Первичная SEO оптимизация</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-fst">
+                    <div class="point-title">бонус</div>
+                    <div class="point-text">Обучение использованию ресурса</div>
+                    <div class="point-text">Гарантия 3 месяца</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-snd">
+                    <div class="point-title">маркетинговая часть</div>
+                    <div class="point-text">Первичный аудит</div>
+                    <div class="point-text">Подбор подходящих решений</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-trd">
+                    <div class="point-title">разработка</div>
+                    <div class="point-text">Прототипирование сайта</div>
+                    <div class="point-text">Разработка дизайна</div>
+                    <div class="point-text">Вёрстка сайта</div>
+                    <div class="point-text">Размещение на хостинге</div>
+                    <div class="point-text">Подключение метрик и систем аналитики</div>
+                    <div class="point-text">Первичная SEO оптимизация</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-frth">
+                    <div class="point-title">разработка</div>
+                    <div class="point-text">Прототипирование сайта</div>
+                    <div class="point-text">Разработка дизайна</div>
+                    <div class="point-text">Вёрстка сайта</div>
+                    <div class="point-text">Размещение на хостинге</div>
+                    <div class="point-text">Подключение метрик и систем аналитики</div>
+                    <div class="point-text">Первичная SEO оптимизация</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-frth">
+                    <div class="point-title">бонус</div>
+                    <div class="point-text">Обучение использованию ресурса</div>
+                    <div class="point-text">Гарантия 3 месяца</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-fth">
+                    <div class="point-title">маркетинговая часть</div>
+                    <div class="point-text">Первичный аудит</div>
+                    <div class="point-text">Подбор подходящих решений</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-fth">
+                    <div class="point-title">разработка</div>
+                    <div class="point-text">Прототипирование сайта</div>
+                    <div class="point-text">Разработка дизайна</div>
+                    <div class="point-text">Вёрстка сайта</div>
+                    <div class="point-text">Размещение на хостинге</div>
+                    <div class="point-text">Подключение метрик и систем аналитики</div>
+                    <div class="point-text">Первичная SEO оптимизация</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-fth">
+                    <div class="point-title">бонус</div>
+                    <div class="point-text">Обучение использованию ресурса</div>
+                    <div class="point-text">Гарантия 3 месяца</div>
+                </div>
+                <div class="rate-point" data-point-rate="rate-sth">
+                    <div class="point-title">маркетинговая часть</div>
+                    <div class="point-text">Первичный аудит</div>
+                    <div class="point-text">Подбор подходящих решений</div>
+                </div>
+            </div>
+            <!-- <input id="input" type="range" min="0" value="0" max="6" step="1">
+            <div id="output"></div> -->
         </section>
     </div>
     @@include('html/footer.html')
