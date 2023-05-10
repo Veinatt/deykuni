@@ -1093,6 +1093,7 @@ header .my-dropdown .my-dropdown-menu {
   font-size: 30px;
   font-family: MabryPro-Regular;
   text-transform: uppercase;
+  display: inline-block;
 }
 
 #s5 .rate-cont .rate .img-cont {
@@ -1179,4 +1180,32 @@ header .my-dropdown .my-dropdown-menu {
 #s6 .point-cont .rate-point .point-title::before {
   content: "—";
   margin-right: 10px;
+}
+
+#s7 {
+  padding-top: 160px;
+  position: relative;
+}
+
+#s7 .anchor-down {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  transition-delay: 4s;
+}
+
+#s7 .anchor-down.rate-anim-disabled {
+  opacity: 0;
+}
+
+#s7 .main-title {
+  text-transform: uppercase;
+  padding-top: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease-out, padding-top 0.7s ease-out;
+  transition-delay: 0.7s, 2s;
+}
+
+#s7 .main-title.rate-anim-disabled {
+  opacity: 0;
+  padding-top: calc(50vh - 1em - 160px);
 }

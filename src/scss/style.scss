@@ -805,6 +805,7 @@ section {
 				font-size: 30px;
 				font-family: $f-r;
 				text-transform: uppercase;
+				display: inline-block;
 			}
 			.img-cont {
 				width: 100%;
@@ -883,4 +884,29 @@ section {
 			}
 		}
 	}
+}
+
+#s7 {
+	padding-top: calc($h-s + 50px);
+	position: relative;
+	.anchor-down {
+		opacity: 1;
+		transition: opacity .5s ease-out;
+		transition-delay: 4s;
+		&.rate-anim-disabled {
+			opacity: 0;
+		}
+	}
+	.main-title {
+		text-transform: uppercase;
+		padding-top: 0;
+		opacity: 1;
+		transition: opacity .5s ease-out, padding-top .7s ease-out;
+		transition-delay: .7s, 2s;
+		&.rate-anim-disabled {
+			opacity: 0;
+			padding-top: calc(50vh - 1em - ($h-s + 50px));
+		}
+	}
+	
 }
