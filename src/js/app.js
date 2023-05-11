@@ -221,11 +221,25 @@ for (var i = 0; i < texts.length; i++) {
 //     }, "3000");
 //   })
 //   .addTo(controller);
+
+
 let fpsec = window.sessionStorage.getItem('fpsec');
 let dt_cat_ls = window.sessionStorage.getItem('category');
 let dt_rate_ls = window.sessionStorage.getItem('rate');
 let rate_anim = window.sessionStorage.getItem('rate_anim');
 let point_anim = window.sessionStorage.getItem('point_anim');
+let slider_anim = window.sessionStorage.getItem('slider_anim');
+
+function disableFullpage() {
+  fullpage_api.setAllowScrolling(false, 'up');
+  fullpage_api.setKeyboardScrolling(false, 'up');
+  fullpage_api.setAllowScrolling(false, 'down');
+  fullpage_api.setKeyboardScrolling(false, 'down');
+  setTimeout(() => {
+    fullpage_api.setAllowScrolling(true, 'all');
+    fullpage_api.setKeyboardScrolling(true, 'all');
+  }, 5000);
+}
 
 function disableRateAnim() {
   document.querySelector('#s5 .sub-text').classList.add('rate-anim-disabled')
@@ -233,32 +247,40 @@ function disableRateAnim() {
   document.querySelector('#s5 .rate-cont').classList.add('rate-anim-disabled')
   document.querySelector('#s5 .main-title').classList.add('rate-anim-disabled')
 }
+
 function enableRateAnim() {
   document.querySelector('#s5 .sub-text').classList.remove('rate-anim-disabled')
   document.querySelector('#s5 .need-help').classList.remove('rate-anim-disabled')
   document.querySelector('#s5 .rate-cont').classList.remove('rate-anim-disabled')
   document.querySelector('#s5 .main-title').classList.remove('rate-anim-disabled')
 }
+
 function disablePointAnim() {
   document.querySelector('#s6 .point-cont').classList.add('rate-anim-disabled')
   document.querySelector('#s6 .anchor-down').classList.add('rate-anim-disabled')
   document.querySelector('#s6 .main-title').classList.add('rate-anim-disabled')
 }
+
 function enablePointAnim() {
   document.querySelector('#s6 .point-cont').classList.remove('rate-anim-disabled')
   document.querySelector('#s6 .anchor-down').classList.remove('rate-anim-disabled')
   document.querySelector('#s6 .main-title').classList.remove('rate-anim-disabled')
 }
-// const values = [1, 3, 5, 10, 20, 50, 100];
 
-// const input = document.getElementById('input'),
-//     output = document.getElementById('output');
+function disableSliderAnim() {
+  document.querySelector('#s7 .team-slider').classList.add('rate-anim-disabled')
+  document.querySelector('#s7 .anchor-down').classList.add('rate-anim-disabled')
+  document.querySelector('#s7 .main-title').classList.add('rate-anim-disabled')
+}
 
-// input.oninput = function() {
-//     output.innerHTML = values[this.value];
-// };
+function enableSliderAnim() {
+  document.querySelector('#s7 .team-slider').classList.remove('rate-anim-disabled')
+  document.querySelector('#s7 .anchor-down').classList.remove('rate-anim-disabled')
+  document.querySelector('#s7 .main-title').classList.remove('rate-anim-disabled')
+}
+
 window.onload = function () {
-  // input.oninput();
+  console.log(fpsec);
   fullpage_api.silentMoveTo(fpsec);
   document.querySelectorAll(`[data-rate-category="${dt_cat_ls}"]`).forEach(rate => {
     rate.style.display = 'block'
@@ -272,16 +294,28 @@ window.onload = function () {
   if (point_anim === null) {
     disablePointAnim();
   }
+  if (slider_anim === null) {
+    disableSliderAnim();
+  }
 }
-
+const swiper = new Swiper('.swiper', {
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  spaceBetween: 20,
+  slidesPerView: 4,
+});
 
 new fullpage('#fullpage', {
   //options here
   autoScrolling: true,
-  anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'sixthPage'],
+  anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7'],
   lockAnchors: true,
   recordHistory: true,
-  afterLoad: function() {
+  afterLoad: function (origin, destination, direction) {
+    console.log(fullpage_api.getActiveSection().anchor);
     window.sessionStorage.setItem('fpsec', fullpage_api.getActiveSection().anchor)
     if (document.querySelector('#s1').classList.contains('active')) {
       document.querySelector('.header-cont').classList.remove('active')
@@ -292,36 +326,40 @@ new fullpage('#fullpage', {
     url_ob.hash = '#' + fullpage_api.getActiveSection().item.id + '';
     var new_url = url_ob.href;
     document.location.href = new_url;
-    if (fullpage_api.getActiveSection().anchor !== 'thirdPage' && fullpage_api.getActiveSection().anchor !== 'fourthPage') {
-      fullpage_api.setAllowScrolling(true, 'all');
-      fullpage_api.setKeyboardScrolling(true, 'all');
-    }
-    if (fullpage_api.getActiveSection().anchor === 'thirdPage') {
+    if (fullpage_api.getActiveSection().anchor === 'page3') {
       fullpage_api.setAllowScrolling(true, 'up');
       fullpage_api.setKeyboardScrolling(true, 'up');
       fullpage_api.setAllowScrolling(false, 'down');
       fullpage_api.setKeyboardScrolling(false, 'down');
     }
-    if (fullpage_api.getActiveSection().anchor === 'fourthPage') {
+    if (fullpage_api.getActiveSection().anchor === 'page4') {
       fullpage_api.setAllowScrolling(false, 'up');
       fullpage_api.setKeyboardScrolling(false, 'up');
       fullpage_api.setAllowScrolling(false, 'down');
       fullpage_api.setKeyboardScrolling(false, 'down');
     }
-    if (fullpage_api.getActiveSection().anchor === 'fifthPage') {
+    if (fullpage_api.getActiveSection().anchor === 'page5') {
       fullpage_api.setAllowScrolling(false, 'down');
       fullpage_api.setKeyboardScrolling(false, 'down');
     }
-  },
-  onLeave: function(origin, destination, direction) {
-    console.log(direction);
-    if (fullpage_api.getActiveSection().anchor === 'fourthPage' && direction == 'down' && rate_anim === null) {
+    if (fullpage_api.getActiveSection().anchor === 'page5' && direction == 'down' && rate_anim === null) {
       window.sessionStorage.setItem('rate_anim', 'disabled')
       enableRateAnim();
+      disableFullpage();
+      setTimeout(() => {
+      fullpage_api.setAllowScrolling(false, 'down');
+      fullpage_api.setKeyboardScrolling(false, 'down');
+      }, 5000);
     }
-    if (fullpage_api.getActiveSection().anchor === 'fifthPage' && direction == 'down' && point_anim === null) {
+    if (fullpage_api.getActiveSection().anchor === 'page6' && direction == 'down' && point_anim === null) {
       window.sessionStorage.setItem('point_anim', 'disabled')
       enablePointAnim();
+      disableFullpage();
+    }
+    if (fullpage_api.getActiveSection().anchor === 'page7' && direction == 'down' && slider_anim === null) {
+      window.sessionStorage.setItem('slider_anim', 'disabled')
+      enableSliderAnim();
+      disableFullpage();
     }
   },
 });
