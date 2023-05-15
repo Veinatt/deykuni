@@ -362,7 +362,7 @@ section {
   white-space: nowrap;
 }
 
-.cursor-last-page .svg-cricle {
+.cursor-last-page .svg-circle {
   display: grid;
   place-items: center;
   width: 90px;
