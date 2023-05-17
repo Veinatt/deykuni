@@ -36,8 +36,8 @@ a:focus {
 $c-black: #1A1A1A;
 $c-gray: #777;
 $c-border: #343434;
-$c-blue: #3360FF;
-$c-green: #B1FF33;
+$c-blue: rgb(51, 96, 255);
+$c-green: rgb(177, 255, 51);
 $c-pink: #E233FF;
 $f-b: MabryPro-Bold;
 $f-m: MabryPro-Medium;
@@ -228,6 +228,9 @@ section {
 	}
 }
 
+.anchor-top {
+	cursor: pointer;
+}
 
 @import "header.scss";
 @import "footer.scss";
@@ -749,7 +752,9 @@ section {
 
 				&:hover {
 					transition: border-left .3s ease-in-out;
-
+					svg {
+						filter: drop-shadow(0px 0px 50px rgba(51, 96, 255, 0.2));
+					}
 					path {
 						fill: $c-blue;
 					}
@@ -796,6 +801,9 @@ section {
 				width: calc((100% / 2) - 1px);
 
 				&:hover {
+					svg {
+						filter: drop-shadow(0px 0px 50px rgba(177, 255, 51, 0.2));
+					}
 					path {
 						fill: $c-green
 					}
@@ -1242,27 +1250,36 @@ section {
 	cursor: none;
 
 	.main-title {
+		position: relative;
 		margin-bottom: 20px;
 		padding-top: 0;
 		opacity: 1;
+		z-index: 5;
 	}
 
 	.click-text {
+		position: relative;
 		font-family: $f-r;
 		font-size: 24px;
 		color: $c-gray;
+		z-index: 5;
 	}
 
 	.lp-sh {
-		width: 60%;
-		height: 40%;
-		background: #2C2C2C;
+		width: 70%;
+		height: 55%;
+		background: $c-blue;
 		border-radius: 50%;
 		position: absolute;
 		transform: translate(-50%, -50%);
 		top: 50%;
 		left: 50%;
-		filter: blur(200px);
+		filter: blur(150px);
+		transition: all .5s ease-out;
+		transition-delay: 2s;
+		&.rate-anim-disabled {
+			background: #2c2c2c;
+		}
 	}
 
 	.lp-left {
@@ -1294,7 +1311,13 @@ section {
 	.lp-q {
 		position: absolute;
 		transform: translate(-50%, -50%);
-		top: 50%;
-		left: 50%;
+		bottom: 200px;
+		left: calc(50% - 30px);
+		transition: all .5s ease-out;
+		transition-delay: 2s;
+		opacity: 0;
+		&.rate-anim-disabled {
+			opacity: 1;
+		}
 	}
 }

@@ -134,108 +134,7 @@ lp.addEventListener('mouseleave', () => {
 //     }, "3000");
 //   })
 //   .addTo(controller);
-// new ScrollMagic.Scene({
-//     triggerElement: '.s2-overflow',
-//     offset: 100,
-//     duration: 1,
-//     triggerHook: 0,
-//   })
-//   .on("enter", function (event) {
-//     disableScroll()
-//     document.querySelector('#s2 .acc-snd').click()
-//     setTimeout(() => {
-//       enableScroll()
-//     }, "3000");
-//   })
-//   .addTo(controller);
-// new ScrollMagic.Scene({
-//     triggerElement: '.s2-overflow',
-//     offset: 200,
-//     duration: 1,
-//     triggerHook: 0,
-//   })
-//   .on("enter", function (event) {
-//     disableScroll()
-//     document.querySelector('#s2 .acc-trd').click()
-//     setTimeout(() => {
-//       enableScroll()
-//     }, "3000");
-//   })
-//   .addTo(controller);
-// new ScrollMagic.Scene({
-//     triggerElement: '.s2-overflow',
-//     offset: 300,
-//     duration: 1,
-//     triggerHook: 0,
-//   })
-//   .on("enter", function (event) {
-//     disableScroll()
-//     document.querySelector('#s2 .acc-fth').click()
-//     setTimeout(() => {
-//       enableScroll()
-//     }, "3000");
-//   })
-//   .addTo(controller);
 
-
-
-// new ScrollMagic.Scene({
-//     triggerElement: '.s2-overflow',
-//     offset: 100,
-//     duration: 0,
-//     triggerHook: 0,
-//   })
-//   .on("leave", function (event) {
-//     disableScroll()
-//     document.querySelector('#s2 .acc-fst').click()
-//     setTimeout(() => {
-//       enableScroll()
-//     }, "3000");
-//   })
-//   .addTo(controller);
-
-// new ScrollMagic.Scene({
-//     triggerElement: '.s2-overflow',
-//     offset: 200,
-//     duration: 0,
-//     triggerHook: 0,
-//   })
-//   .on("leave", function (event) {
-//     disableScroll()
-//     document.querySelector('#s2 .acc-snd').click()
-//     setTimeout(() => {
-//       enableScroll()
-//     }, "3000");
-//   })
-//   .addTo(controller);
-// new ScrollMagic.Scene({
-//     triggerElement: '.s2-overflow',
-//     offset: 300,
-//     duration: 0,
-//     triggerHook: 0,
-//   })
-//   .on("leave", function (event) {
-//     disableScroll()
-//     document.querySelector('#s2 .acc-trd').click()
-//     setTimeout(() => {
-//       enableScroll()
-//     }, "3000");
-//   })
-//   .addTo(controller);
-// new ScrollMagic.Scene({
-//     triggerElement: '.s2-overflow',
-//     offset: 400,
-//     duration: 0,
-//     triggerHook: 0,
-//   })
-//   .on("leave", function (event) {
-//     disableScroll()
-//     document.querySelector('#s2 .acc-fth').click()
-//     setTimeout(() => {
-//       enableScroll()
-//     }, "3000");
-//   })
-//   .addTo(controller);
 
 
 let fpsec = window.sessionStorage.getItem('fpsec');
@@ -246,6 +145,7 @@ let point_anim = window.sessionStorage.getItem('point_anim');
 let slider_anim = window.sessionStorage.getItem('slider_anim');
 let fade_anim = window.sessionStorage.getItem('fade_anim');
 let site_anim = window.sessionStorage.getItem('site_anim');
+let last_anim = window.sessionStorage.getItem('last_anim');
 
 function disableFullpage() {
   fullpage_api.setAllowScrolling(false, 'up');
@@ -332,9 +232,19 @@ function enableSiteAnim() {
   document.querySelector('#s9 .main-title').classList.remove('rate-anim-disabled')
   document.querySelector('#s9 .sites-cont').classList.remove('rate-anim-disabled')
 }
+function disableLastAnim() {
+  document.querySelector('#s10 .lp-sh').classList.add('rate-anim-disabled')
+  document.querySelector('#s10 .lp-q').classList.add('rate-anim-disabled')
+}
+
+function enableLastAnim() {
+  document.querySelector('#s10 .lp-sh').classList.remove('rate-anim-disabled')
+  document.querySelector('#s10 .lp-q').classList.remove('rate-anim-disabled')
+}
 let ratelist = [...document.querySelectorAll(".site")];
 
 window.onload = function () {
+  $('#exampleModal').modal("show")
   fullpage_api.silentMoveTo(fpsec);
   document.querySelectorAll(`[data-rate-category="${dt_cat_ls}"]`).forEach(rate => {
     rate.style.display = 'block'
@@ -348,16 +258,19 @@ window.onload = function () {
   if (point_anim === null) {
     disablePointAnim();
   }
-  if (slider_anim === null) {
-    disableSliderAnim();
-  }
+  enableSliderAnim();
+  // if (slider_anim === null) {
+  //   disableSliderAnim();
+  // }
   if (fade_anim === null) {
     disableFadeAnim();
   }
   if (site_anim === null) {
     disableSiteAnim();
   }
-
+  if (last_anim === null) {
+    disableLastAnim();
+  }
   document.querySelectorAll('.site').forEach(rate => {
     rate.style.display = 'none';
   })
@@ -445,12 +358,12 @@ new fullpage('#fullpage', {
       enablePointAnim();
       disableFullpage();
     }
-    if (fullpage_api.getActiveSection().anchor === 'page7' && direction == 'down' && slider_anim === null) {
-      slider_anim = 'disabled'
-      window.sessionStorage.setItem('slider_anim', 'disabled')
-      enableSliderAnim();
-      disableFullpage();
-    }
+    // if (fullpage_api.getActiveSection().anchor === 'page7' && direction == 'down' && slider_anim === null) {
+    //   slider_anim = 'disabled'
+    //   window.sessionStorage.setItem('slider_anim', 'disabled')
+    //   enableSliderAnim();
+    //   disableFullpage();
+    // }
     if (fullpage_api.getActiveSection().anchor === 'page8' && direction == 'down' && fade_anim === null) {
       fade_anim = 'disabled'
       window.sessionStorage.setItem('fade_anim', 'disabled')
@@ -462,6 +375,11 @@ new fullpage('#fullpage', {
       window.sessionStorage.setItem('site_anim', 'disabled')
       enableSiteAnim();
       disableFullpage();
+    }
+    if (fullpage_api.getActiveSection().anchor === 'page10' && direction == 'down' && last_anim === null) {
+      site_anim = 'disabled'
+      window.sessionStorage.setItem('last_anim', 'disabled')
+      enableLastAnim();
     }
   },
 });
@@ -485,6 +403,11 @@ document.querySelectorAll('.choose-var').forEach(btn => {
 document.querySelectorAll('.rate').forEach(btn => {
   btn.addEventListener('click', () => {
     fullpage_api.moveSectionDown();
+  })
+})
+document.querySelectorAll('.anchor-top').forEach(btn => {
+  btn.addEventListener('click', () => {
+    fullpage_api.moveTo('page1');
   })
 })
 

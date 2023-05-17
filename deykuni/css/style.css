@@ -336,11 +336,11 @@ section {
 }
 
 .cursor.cursor1 path {
-  fill: #3360FF;
+  fill: rgb(51, 96, 255);
 }
 
 .cursor.cursor2 path {
-  fill: #B1FF33;
+  fill: rgb(177, 255, 51);
 }
 
 .cursor.cursor3 path {
@@ -395,6 +395,10 @@ section {
 .anchor-down svg path,
 .anchor-up svg path {
   fill: #e9e9e9;
+}
+
+.anchor-top {
+  cursor: pointer;
 }
 
 header {
@@ -499,6 +503,86 @@ header .my-dropdown .my-dropdown-menu {
   list-style: none !important;
 }
 
+.modal-dialog {
+  background-color: #1A1A1A;
+  padding: 100px;
+}
+
+.modal-dialog .main-title {
+  position: relative;
+  margin-bottom: 20px;
+  padding-top: 0;
+  opacity: 1;
+}
+
+.modal-dialog .modal-content {
+  background-color: #1A1A1A;
+}
+
+.modal-dialog .click-text {
+  position: relative;
+  font-family: MabryPro-Regular;
+  font-size: 24px;
+  color: #777;
+}
+
+.modal-dialog .btn-closee {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.modal-dialog form {
+  height: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 80%;
+}
+
+.modal-dialog form input,
+.modal-dialog form textarea {
+  width: 100%;
+  font-family: MabryPro-Light;
+  font-size: 24px;
+  padding: 2em 1.5em;
+  color: #777;
+  background-color: #1A1A1A;
+  border: #343434 1px solid;
+  border-radius: 0.66em;
+}
+
+.modal-dialog form input::-moz-placeholder, .modal-dialog form textarea::-moz-placeholder {
+  text-transform: uppercase;
+  color: #343434;
+}
+
+.modal-dialog form input::placeholder,
+.modal-dialog form textarea::placeholder {
+  text-transform: uppercase;
+  color: #343434;
+}
+
+.modal-dialog form textarea {
+  flex: 1 1 auto;
+}
+
+.modal-dialog form button {
+  color: #1A1A1A;
+  background-color: #e9e9e9;
+  font-family: MabryPro-Regular;
+  font-size: 24px;
+  padding: 1.25em 1.5em;
+  display: inline-flex;
+  text-transform: uppercase;
+  border-radius: 0.66em;
+}
+
 .fp-watermark {
   display: none !important;
 }
@@ -538,7 +622,7 @@ header .my-dropdown .my-dropdown-menu {
 }
 
 #s1 .anchor-down.cursor1 {
-  background-color: #3360FF;
+  background-color: rgb(51, 96, 255);
 }
 
 #s1 .anchor-down.cursor1 svg path {
@@ -546,7 +630,7 @@ header .my-dropdown .my-dropdown-menu {
 }
 
 #s1 .anchor-down.cursor2 {
-  background-color: #B1FF33;
+  background-color: rgb(177, 255, 51);
 }
 
 #s1 .anchor-down.cursor2 svg path {
@@ -746,7 +830,7 @@ header .my-dropdown .my-dropdown-menu {
 
 #s2 .acc-img svg.bl.active g rect {
   transition: all 0.3s ease-in-out;
-  fill: #3360FF;
+  fill: rgb(51, 96, 255);
 }
 
 #s2 .acc-img svg.gr.active {
@@ -756,7 +840,7 @@ header .my-dropdown .my-dropdown-menu {
 
 #s2 .acc-img svg.gr.active g rect {
   transition: all 0.3s ease-in-out;
-  fill: #B1FF33;
+  fill: rgb(177, 255, 51);
 }
 
 #s2 .acc-img svg.ye.active {
@@ -991,8 +1075,12 @@ header .my-dropdown .my-dropdown-menu {
   transition: border-left 0.3s ease-in-out;
 }
 
+.choose-sec .choose-cont .choose-right .choose-var:hover svg {
+  filter: drop-shadow(0px 0px 50px rgba(51, 96, 255, 0.2));
+}
+
 .choose-sec .choose-cont .choose-right .choose-var:hover path {
-  fill: #3360FF;
+  fill: rgb(51, 96, 255);
 }
 
 .choose-sec .choose-cont .choose-right .choose-var:hover .title::after {
@@ -1027,8 +1115,12 @@ header .my-dropdown .my-dropdown-menu {
   width: calc(50% - 1px);
 }
 
+#s4 .choose-cont .choose-right .choose-var:hover svg {
+  filter: drop-shadow(0px 0px 50px rgba(177, 255, 51, 0.2));
+}
+
 #s4 .choose-cont .choose-right .choose-var:hover path {
-  fill: #B1FF33;
+  fill: rgb(177, 255, 51);
 }
 
 #s4 .choose-cont .choose-right .choose-var:hover .title {
@@ -1336,8 +1428,8 @@ header .my-dropdown .my-dropdown-menu {
 
 #s8 .fade-block.fb-blue.rate-anim-disabled {
   opacity: 0;
-  background-color: #3360FF;
-  border: 1px solid #3360FF;
+  background-color: rgb(51, 96, 255);
+  border: 1px solid rgb(51, 96, 255);
   color: #e9e9e9;
 }
 
@@ -1348,8 +1440,8 @@ header .my-dropdown .my-dropdown-menu {
 
 #s8 .fade-block.fb-green.rate-anim-disabled {
   opacity: 0;
-  background-color: #B1FF33;
-  border: 1px solid #B1FF33;
+  background-color: rgb(177, 255, 51);
+  border: 1px solid rgb(177, 255, 51);
   color: #1A1A1A;
 }
 
@@ -1466,27 +1558,37 @@ header .my-dropdown .my-dropdown-menu {
 }
 
 #s10 .main-title {
+  position: relative;
   margin-bottom: 20px;
   padding-top: 0;
   opacity: 1;
+  z-index: 5;
 }
 
 #s10 .click-text {
+  position: relative;
   font-family: MabryPro-Regular;
   font-size: 24px;
   color: #777;
+  z-index: 5;
 }
 
 #s10 .lp-sh {
-  width: 60%;
-  height: 40%;
-  background: #2C2C2C;
+  width: 70%;
+  height: 55%;
+  background: rgb(51, 96, 255);
   border-radius: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  filter: blur(200px);
+  filter: blur(150px);
+  transition: all 0.5s ease-out;
+  transition-delay: 2s;
+}
+
+#s10 .lp-sh.rate-anim-disabled {
+  background: #2c2c2c;
 }
 
 #s10 .lp-left {
@@ -1518,6 +1620,13 @@ header .my-dropdown .my-dropdown-menu {
 #s10 .lp-q {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  bottom: 200px;
+  left: calc(50% - 30px);
+  transition: all 0.5s ease-out;
+  transition-delay: 2s;
+  opacity: 0;
+}
+
+#s10 .lp-q.rate-anim-disabled {
+  opacity: 1;
 }
