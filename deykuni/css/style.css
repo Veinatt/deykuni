@@ -550,7 +550,7 @@ header .my-dropdown .my-dropdown-menu {
   width: 100%;
   font-family: MabryPro-Light;
   font-size: 24px;
-  padding: 2em 1.5em;
+  padding: 1.25em 1.5em;
   color: #777;
   background-color: #1A1A1A;
   border: #343434 1px solid;
@@ -570,6 +570,8 @@ header .my-dropdown .my-dropdown-menu {
 
 .modal-dialog form textarea {
   flex: 1 1 auto;
+  resize: none;
+  overflow: hidden;
 }
 
 .modal-dialog form button {

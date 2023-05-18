@@ -144,7 +144,7 @@ header {
             width: 100%;
             font-family: $f-l;
             font-size: 24px;
-            padding: 2em 1.5em;
+            padding: 1.25em 1.5em;
             color: $c-gray;
             background-color: $c-black;
             border: $c-border 1px solid;
@@ -158,6 +158,8 @@ header {
 
         textarea {
             flex: 1 1 auto;
+            resize: none;
+            overflow: hidden;
         }
 
         button {
@@ -170,5 +172,7 @@ header {
             text-transform: uppercase;
             border-radius: .66em;
         }
+
+        
     }
 }

@@ -244,7 +244,6 @@ function enableLastAnim() {
 let ratelist = [...document.querySelectorAll(".site")];
 
 window.onload = function () {
-  $('#exampleModal').modal("show")
   fullpage_api.silentMoveTo(fpsec);
   document.querySelectorAll(`[data-rate-category="${dt_cat_ls}"]`).forEach(rate => {
     rate.style.display = 'block'
@@ -531,7 +530,18 @@ document.querySelectorAll('.dt-category').forEach(cat => {
     })
   })
 })
-
+// document.querySelectorAll('.dt-category').forEach(cat => {
+//   cat.addEventListener('click', () => {
+//     document.querySelectorAll('.rate').forEach(rate => {
+//       rate.style.display = 'none'
+//     })
+//     let dt_cat = cat.getAttribute('data-category');
+//     window.sessionStorage.setItem('category', dt_cat)
+//     document.querySelectorAll(`[data-rate-category="${dt_cat}"]`).forEach(rate => {
+//       rate.style.display = 'block'
+//     })
+//   })
+// })
 document.querySelectorAll('.rate').forEach(cat => {
   cat.addEventListener('click', () => {
     document.querySelectorAll('.rate-point').forEach(rate => {
