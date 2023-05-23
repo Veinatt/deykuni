@@ -1,5 +1,7 @@
-var form_name = document.getElementById('FormInputName');
-var form_tel = document.getElementById('FormInputTel');
+let form_name = document.getElementById('FormInputName');
+let form_tel = document.getElementById('FormInputTel');
+let form_text = document.getElementById('FormInputText');
+
 form_name.addEventListener('keyup', function (event) {
     if (check(form_name.value, true)) {
         form_name.style.borderColor = "#343434";
@@ -13,6 +15,7 @@ $('#exampleModal').on('hidden.bs.modal', function () {
     form_name.style.borderColor = "#343434";
     form_tel.value = '';
     form_tel.style.borderColor = "#343434";
+    form_text.value = '';
     document.querySelector('.modal-content .main-title').innerHTML = 'Всё ещё в раздумьях?';
     document.querySelector('.modal-content .click-text').innerHTML = 'От принятия решения вас отделяет один клик'
     document.querySelector('.modal-content form').style.display = 'flex';
@@ -24,12 +27,33 @@ function form_submit(e) {
     var form_name_val = document.getElementById('FormInputName').value;
     var form_tel_val = document.getElementById('FormInputTel').value;
     var form_text_val = document.getElementById('FormInputText').value;
-    if (check(form_name, true)) {
+    var form_biz_val, form_bud_val, form_rate_val
+
+    if (dt_cat_ls) {
+        form_biz_val = document.querySelector(`div[data-category=${dt_cat_ls}] .title`).textContent
+    } else {
+        form_biz_val = 'не указан'
+    }
+    if (dt_budget_ls) {
+        form_bud_val = document.querySelector(`div[data-budget=${dt_budget_ls}] .title`).textContent
+    } else {
+        form_bud_val = 'не указан'
+    }
+    if (dt_rate_ls) {
+        form_rate_val = document.querySelector(`div[data-rate=${dt_rate_ls}] .title`).textContent
+    } else {
+        form_rate_val = 'не указан'
+    }
+    console.log(form_name_val,form_tel_val, form_text_val, form_biz_val, form_bud_val, form_rate_val);
+    if (check(form_name_val, true)) {
         form = new FormData();
         xhr = new XMLHttpRequest();
         form.append('form_name', form_name_val);
         form.append('form_tel', form_tel_val);
         form.append('form_text', form_text_val);
+        form.append('form_biz', form_biz_val);
+        form.append('form_bud', form_bud_val);
+        form.append('form_rate', form_rate_val);
 
         xhr.onload = function () {
             if (xhr.status === 200) {

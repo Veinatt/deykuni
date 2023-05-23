@@ -1061,6 +1061,7 @@ header .my-dropdown .my-dropdown-menu {
 
 .choose-sec .choose-cont .choose-right .choose-var .title {
   position: relative;
+  text-transform: uppercase;
 }
 
 .choose-sec .choose-cont .choose-right .choose-var .title::after {

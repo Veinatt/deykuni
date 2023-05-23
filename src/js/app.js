@@ -137,16 +137,6 @@ lp.addEventListener('mouseleave', () => {
 
 
 
-let fpsec = window.sessionStorage.getItem('fpsec');
-let dt_cat_ls = window.sessionStorage.getItem('category');
-let dt_rate_ls = window.sessionStorage.getItem('rate');
-let rate_anim = window.sessionStorage.getItem('rate_anim');
-let point_anim = window.sessionStorage.getItem('point_anim');
-let slider_anim = window.sessionStorage.getItem('slider_anim');
-let fade_anim = window.sessionStorage.getItem('fade_anim');
-let site_anim = window.sessionStorage.getItem('site_anim');
-let last_anim = window.sessionStorage.getItem('last_anim');
-
 function disableFullpage() {
   fullpage_api.setAllowScrolling(false, 'up');
   fullpage_api.setKeyboardScrolling(false, 'up');
@@ -524,30 +514,28 @@ document.querySelectorAll('.dt-category').forEach(cat => {
       rate.style.display = 'none'
     })
     let dt_cat = cat.getAttribute('data-category');
+    dt_cat_ls = dt_cat
     window.sessionStorage.setItem('category', dt_cat)
     document.querySelectorAll(`[data-rate-category="${dt_cat}"]`).forEach(rate => {
       rate.style.display = 'block'
     })
   })
 })
-// document.querySelectorAll('.dt-category').forEach(cat => {
-//   cat.addEventListener('click', () => {
-//     document.querySelectorAll('.rate').forEach(rate => {
-//       rate.style.display = 'none'
-//     })
-//     let dt_cat = cat.getAttribute('data-category');
-//     window.sessionStorage.setItem('category', dt_cat)
-//     document.querySelectorAll(`[data-rate-category="${dt_cat}"]`).forEach(rate => {
-//       rate.style.display = 'block'
-//     })
-//   })
-// })
+document.querySelectorAll('.dt-budget').forEach(bud => {
+  bud.addEventListener('click', () => {
+    let dt_bud = bud.getAttribute('data-budget');
+    dt_budget_ls = dt_bud
+    window.sessionStorage.setItem('budget', dt_bud)
+  })
+})
 document.querySelectorAll('.rate').forEach(cat => {
   cat.addEventListener('click', () => {
     document.querySelectorAll('.rate-point').forEach(rate => {
       rate.style.display = 'none'
     })
     let dt_cat = cat.getAttribute('data-rate');
+    
+    dt_rate_ls = dt_cat
     window.sessionStorage.setItem('rate', dt_cat)
     document.querySelectorAll(`[data-point-rate="${dt_cat}"]`).forEach(rate => {
       rate.style.display = 'flex'
