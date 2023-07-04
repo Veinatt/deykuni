@@ -328,6 +328,8 @@ new fullpage('#fullpage', {
       fullpage_api.setKeyboardScrolling(false, 'down');
     }
     if (fullpage_api.getActiveSection().anchor === 'page5') {
+      fullpage_api.setAllowScrolling(true, 'up');
+      fullpage_api.setKeyboardScrolling(true, 'up');
       fullpage_api.setAllowScrolling(false, 'down');
       fullpage_api.setKeyboardScrolling(false, 'down');
     }
@@ -337,6 +339,8 @@ new fullpage('#fullpage', {
       enableRateAnim();
       disableFullpage();
       setTimeout(() => {
+        fullpage_api.setAllowScrolling(true, 'up');
+        fullpage_api.setKeyboardScrolling(true, 'up');
       fullpage_api.setAllowScrolling(false, 'down');
       fullpage_api.setKeyboardScrolling(false, 'down');
       }, 5000);

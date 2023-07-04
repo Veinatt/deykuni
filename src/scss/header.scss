@@ -13,10 +13,10 @@ header {
         width: 100%;
         padding: 40px 100px;
         line-height: 1em;
+        background-color: $c-black;
         transition: all .3s ease-in-out;
 
         &.active {
-            background-color: $c-black;
             border-bottom: 1px solid $c-border;
         }
     }
@@ -119,6 +119,12 @@ header {
         font-family: $f-r;
         font-size: 24px;
         color: $c-gray;
+        @media (max-width: $media-xxl) {
+			font-size: 22px;
+		}
+        @media (max-width: $media-xl) {
+            font-size: 20px;
+        }
     }
 
     .btn-closee {
@@ -128,6 +134,13 @@ header {
         height: 60px;
         aspect-ratio: 1;
         cursor: pointer;
+        @media (max-width: $media-xl) {
+            height: 40px;
+            svg {
+                height: 40px;
+                width: 40px;
+            }
+        }
     }
 
     form {
@@ -149,7 +162,12 @@ header {
             background-color: $c-black;
             border: $c-border 1px solid;
             border-radius: .66em;
-
+            @media (max-width: $media-xxl) {
+                font-size: 22px;
+            }
+            @media (max-width: $media-xl) {
+                font-size: 20px;
+            }
             &::placeholder {
                 text-transform: uppercase;
                 color: $c-border;
@@ -171,6 +189,12 @@ header {
             display: inline-flex;
             text-transform: uppercase;
             border-radius: .66em;
+            @media (max-width: $media-xxl) {
+                font-size: 22px;
+            }
+            @media (max-width: $media-xl) {
+                font-size: 20px;
+            }
         }
 
         

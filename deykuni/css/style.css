@@ -417,11 +417,11 @@ header .header-cont {
   width: 100%;
   padding: 40px 100px;
   line-height: 1em;
+  background-color: #1A1A1A;
   transition: all 0.3s ease-in-out;
 }
 
 header .header-cont.active {
-  background-color: #1A1A1A;
   border-bottom: 1px solid #343434;
 }
 
@@ -649,7 +649,7 @@ header .my-dropdown .my-dropdown-menu {
 
 #s1 .s1-cont {
   position: absolute;
-  top: calc(50% - 180px);
+  top: calc(50% - 165px);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -662,7 +662,7 @@ header .my-dropdown .my-dropdown-menu {
   font-size: 100px;
   line-height: 1.1em;
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 #s1 .s1-cont .main-text div {
@@ -672,7 +672,6 @@ header .my-dropdown .my-dropdown-menu {
 
 #s1 .s1-cont .sub-text {
   color: #777;
-  margin-bottom: 100px;
 }
 
 #s1 .s1-bg {
@@ -799,6 +798,7 @@ header .my-dropdown .my-dropdown-menu {
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 100;
 }
 
 #s2 .main-title {
@@ -1294,8 +1294,8 @@ header .my-dropdown .my-dropdown-menu {
 }
 
 #s6 .point-cont .rate-point .point-text {
-  font-size: 24px;
   font-family: MabryPro-Regular;
+  font-size: 24px;
 }
 
 #s6 .point-cont .rate-point .point-title {
@@ -1632,4 +1632,228 @@ header .my-dropdown .my-dropdown-menu {
 
 #s10 .lp-q.rate-anim-disabled {
   opacity: 1;
+}
+
+@media (max-width: 1650px) {
+  body {
+    font-size: 22px;
+  }
+
+  .main-title {
+    font-size: 60px;
+  }
+
+  .cursor-last-page {
+    font-size: 24px;
+  }
+
+  .modal-dialog .click-text {
+    font-size: 22px;
+  }
+
+  .modal-dialog form input,
+  .modal-dialog form textarea {
+    font-size: 22px;
+  }
+
+  .modal-dialog form button {
+    font-size: 22px;
+  }
+
+  #s1 .s1-cont {
+    top: calc(50% - 149px);
+  }
+
+  #s1 .s1-cont {
+    top: calc(50% - 132px);
+  }
+
+  #s1 .s1-cont .main-text {
+    font-size: 90px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg {
+    transform: scale(0.9);
+    bottom: -100px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(1) {
+    right: 480px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(2) {
+    right: 580px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(3) {
+    right: 180px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(4) {
+    right: 330px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(5) {
+    right: -20px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(6) {
+    bottom: 0px;
+    right: 560px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(7) {
+    bottom: 20px;
+    right: 380px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(8) {
+    right: -20px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(9) {
+    right: -20px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(10) {
+    right: 130px;
+  }
+
+  .choose-sec .choose-cont .choose-left .choose-title {
+    font-size: 60px;
+  }
+
+  #s5 .sub-text {
+    font-size: 22px;
+  }
+
+  #s5 .need-help {
+    font-size: 22px;
+  }
+
+  #s5 .rate-cont .rate .rate-cat-text {
+    font-size: 18px;
+  }
+
+  #s5 .rate-cont .rate .title {
+    font-size: 24px;
+  }
+
+  #s6 .point-cont .rate-point .point-text {
+    font-size: 22px;
+  }
+
+  #s6 .point-cont .rate-point .point-title {
+    font-size: 24px;
+  }
+
+  #s7 .team-slider .swiper-slide .tm8-name {
+    font-size: 18px;
+  }
+
+  #s7 .team-slider .swiper-slide .tm8-post {
+    font-size: 22px;
+  }
+
+  #s7 .team-slider .swiper-slide img {
+    height: calc(100vh - 592.8px);
+  }
+
+  #s8 .fade-block {
+    font-size: 24px;
+  }
+
+  #s9 .sites-cont .load-more {
+    font-size: 22px;
+  }
+
+  #s9 .sites-cont .site .title {
+    font-size: 24px;
+  }
+
+  #s9 .sites-cont .site .site-for {
+    font-size: 18px;
+  }
+
+  #s10 .click-text {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1400px) {
+  body {
+    font-size: 20px;
+  }
+
+  .cursor-last-page .svg-circle {
+    width: 80px;
+  }
+
+  .anchor-down,
+  .anchor-up {
+    width: 80px;
+  }
+
+  .modal-dialog .click-text {
+    font-size: 20px;
+  }
+
+  .modal-dialog .btn-closee {
+    height: 40px;
+  }
+
+  .modal-dialog .btn-closee svg {
+    height: 40px;
+    width: 40px;
+  }
+
+  .modal-dialog form input,
+  .modal-dialog form textarea {
+    font-size: 20px;
+  }
+
+  .modal-dialog form button {
+    font-size: 20px;
+  }
+
+  #s1 .anchor-down {
+    width: 80px;
+  }
+
+  #s1 .s1-cont .main-text {
+    font-size: 80px;
+  }
+
+  .choose-sec .choose-cont .choose-left svg {
+    aspect-ratio: 42/31;
+    width: 35px;
+  }
+
+  #s5 .sub-text {
+    font-size: 20px;
+  }
+
+  #s5 .need-help {
+    font-size: 20px;
+  }
+
+  #s6 .point-cont .rate-point .point-text {
+    font-size: 20px;
+  }
+
+  #s7 .team-slider .swiper-slide .tm8-post {
+    font-size: 20px;
+  }
+
+  #s7 .team-slider .swiper-slide img {
+    height: calc(100vh - 588px);
+  }
+
+  #s9 .sites-cont .load-more {
+    font-size: 20px;
+  }
+
+  #s10 .click-text {
+    font-size: 20px;
+  }
 }

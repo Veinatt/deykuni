@@ -45,12 +45,24 @@ $f-l: MabryPro-Light;
 $f-i: MabryPro-Italic;
 $f-r: MabryPro-Regular;
 $h-s: 110px;
+$media-xxl: 1650px;
+$media-xl: 1400px;
+$media-l: 1025px;
+$media-m: 850px;
+$media-s: 550px;
 
 body {
 	background-color: $c-black;
 	color: $c-white;
 	font-family: $f-r;
 	font-size: 24px;
+
+	@media (max-width: $media-xxl) {
+		font-size: 22px;
+	}
+	@media (max-width: $media-xl) {
+		font-size: 20px;
+	}
 
 	img {
 		pointer-events: none !important;
@@ -95,6 +107,10 @@ section {
 	font-size: 80px;
 	line-height: 1.1em;
 	text-transform: uppercase;
+
+	@media (max-width: $media-xxl) {
+		font-size: 60px;
+	}
 }
 
 .cursor {
@@ -190,7 +206,9 @@ section {
 	font-size: 30px;
 	font-family: $f-r;
 	white-space: nowrap;
-
+	@media (max-width: $media-xxl) {
+		font-size: 24px;
+	}
 	.svg-circle {
 		display: grid;
 		place-items: center;
@@ -198,6 +216,9 @@ section {
 		aspect-ratio: 1;
 		background-color: #fff;
 		border-radius: 50%;
+		@media (max-width: $media-xl) {
+			width: 80px;
+		}
 	}
 
 	&.hover {
@@ -220,7 +241,9 @@ section {
 	border-radius: 50%;
 	transition: all .3s ease-in-out;
 	border: 1px solid $c-border;
-
+	@media (max-width: $media-xl) {
+		width: 80px;
+	}
 	svg {
 		path {
 			fill: $c-white;
@@ -267,7 +290,9 @@ section {
 		background-color: $c-white;
 		border-radius: 50%;
 		border: 1px solid transparent;
-
+		@media (max-width: $media-xl) {
+			width: 80px;
+		}
 		svg {
 			path {
 				fill: $c-black;
@@ -307,20 +332,31 @@ section {
 
 	.s1-cont {
 		position: absolute;
-		top: calc(50% - 180px);
+		top: calc(50% - 165px);
 		left: 50%;
 		transform: translateX(-50%);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
+		@media (max-width: $media-xxl) {
+			top: calc(50% - 149px);
+		}
+		@media (max-width: $media-xxl) {
+			top: calc(50% - 132px);
+		}
 		.main-text {
 			text-transform: uppercase;
 			font-size: 100px;
 			line-height: 1.1em;
 			text-align: center;
-			margin-bottom: 35px;
+			margin-bottom: 30px;
 
+			@media (max-width: $media-xxl) {
+				font-size: 90px;
+			}
+			@media (max-width: $media-xl) {
+				font-size: 80px;
+			}
 			div {
 				display: inline-block;
 				cursor: none;
@@ -329,7 +365,6 @@ section {
 
 		.sub-text {
 			color: $c-gray;
-			margin-bottom: 100px;
 		}
 
 
@@ -459,6 +494,7 @@ section {
 		position: sticky;
 		top: 0;
 		left: 0;
+		z-index: 100
 	}
 
 	.main-title {
@@ -533,6 +569,13 @@ section {
 		}
 
 		&.acc-fst-img {
+			@media (max-width: $media-xxl) {
+				svg {
+					transform: scale(.9);
+					bottom: -100px;
+				}
+			}
+
 			svg {
 				position: absolute;
 				bottom: 0;
@@ -540,54 +583,96 @@ section {
 				&:nth-child(1) {
 					right: 500px;
 					z-index: 5;
+
+					@media (max-width: $media-xxl) {
+						right: 480px;
+					}
 				}
 
 				&:nth-child(2) {
 					right: 600px;
 					z-index: 6;
+
+					@media (max-width: $media-xxl) {
+						right: 580px;
+					}
 				}
 
 				&:nth-child(3) {
 					right: 200px;
 					z-index: 7;
 					opacity: 1;
+
+					@media (max-width: $media-xxl) {
+						right: 180px;
+					}
 				}
 
 				&:nth-child(4) {
 					right: 350px;
 					z-index: 8;
+
+					@media (max-width: $media-xxl) {
+						right: 330px;
+					}
 				}
 
 				&:nth-child(5) {
 					right: 0px;
 					z-index: 9;
+
+					@media (max-width: $media-xxl) {
+						right: -20px;
+					}
 				}
 
 				&:nth-child(6) {
 					right: 580px;
 					bottom: 100px;
 					z-index: -1;
+
+					@media (max-width: $media-xxl) {
+						bottom: 0px;
+						right: 560px;
+					}
 				}
 
 				&:nth-child(7) {
 					right: 400px;
 					bottom: 120px;
 					z-index: -1;
+
+					@media (max-width: $media-xxl) {
+						bottom: 20px;
+						right: 380px;
+					}
 				}
 
 				&:nth-child(8) {
 					right: 0px;
 					z-index: 4;
+
+					@media (max-width: $media-xxl) {
+						right: -20px;
+					}
 				}
 
 				&:nth-child(9) {
 					right: 0px;
 					z-index: 3;
+
+					@media (max-width: $media-xxl) {
+						right: -20px;
+					}
 				}
 
 				&:nth-child(10) {
 					right: 150px;
 					z-index: 7;
+
+					@media (max-width: $media-xxl) {
+						right: 130px;
+					}
 				}
 			}
 		}
@@ -701,6 +786,16 @@ section {
 			.choose-title {
 				font-family: $f-r;
 				font-size: 80px;
+
+				@media (max-width: $media-xxl) {
+					font-size: 60px;
+				}
+			}
+			svg {
+				@media (max-width: $media-xl) {
+					aspect-ratio: 42/31;
+					width: 35px;
+				}
 			}
 		}
 
@@ -738,6 +833,7 @@ section {
 				.title {
 					position: relative;
 					text-transform: uppercase;
+
 					&::after {
 						position: absolute;
 						content: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-4.37114e-07 10L1.45 8.6L5 12.15L5 -3.0598e-07L7 -2.18557e-07L7 12.15L10.55 8.6L12 10L6 16L-4.37114e-07 10Z' fill='%23E9E9E9'/%3E%3C/svg%3E%0A");
@@ -752,9 +848,11 @@ section {
 
 				&:hover {
 					transition: border-left .3s ease-in-out;
+
 					svg {
 						filter: drop-shadow(0px 0px 50px rgba(51, 96, 255, 0.2));
 					}
+
 					path {
 						fill: $c-blue;
 					}
@@ -804,6 +902,7 @@ section {
 					svg {
 						filter: drop-shadow(0px 0px 50px rgba(177, 255, 51, 0.2));
 					}
+
 					path {
 						fill: $c-green
 					}
@@ -842,6 +941,13 @@ section {
 	.sub-text {
 		font-family: $f-r;
 		font-size: 24px;
+
+		@media (max-width: $media-xxl) {
+			font-size: 22px;
+		}
+		@media (max-width: $media-xl) {
+			font-size: 20px;
+		}
 		margin-top: 10px;
 		color: $c-gray;
 		opacity: 1;
@@ -859,6 +965,13 @@ section {
 		outline: none;
 		font-family: $f-i;
 		font-size: 24px;
+
+		@media (max-width: $media-xxl) {
+			font-size: 22px;
+		}
+		@media (max-width: $media-xl) {
+			font-size: 20px;
+		}
 		text-decoration: underline;
 		cursor: pointer;
 		opacity: 1;
@@ -894,6 +1007,9 @@ section {
 				font-family: $f-r;
 				font-size: 20px;
 				color: $c-gray;
+				@media (max-width: $media-xxl) {
+					font-size: 18px;
+				}
 			}
 
 			.title {
@@ -902,6 +1018,9 @@ section {
 				font-family: $f-r;
 				text-transform: uppercase;
 				display: inline-block;
+				@media (max-width: $media-xxl) {
+					font-size: 24px;
+				}
 			}
 
 			.img-cont {
@@ -978,15 +1097,23 @@ section {
 			gap: 20px;
 
 			.point-text {
-				font-size: 24px;
 				font-family: $f-r;
+				font-size: 24px;
+				@media (max-width: $media-xxl) {
+					font-size: 22px;
+				}
+				@media (max-width: $media-xl) {
+					font-size: 20px;
+				}
 			}
 
 			.point-title {
 				font-size: 30px;
 				font-family: $f-l;
 				color: $c-gray;
-
+				@media (max-width: $media-xxl) {
+					font-size: 24px;
+				}
 				&::before {
 					content: '\2014';
 					margin-right: 10px;
@@ -1048,6 +1175,9 @@ section {
 				text-transform: lowercase;
 				font-size: $f-r;
 				font-size: 20px;
+				@media (max-width: $media-xxl) {
+					font-size: 18px;
+				}
 			}
 
 			.tm8-post {
@@ -1056,10 +1186,22 @@ section {
 				text-transform: uppercase;
 				font-size: $f-r;
 				font-size: 24px;
+				@media (max-width: $media-xxl) {
+					font-size: 22px;
+				}
+				@media (max-width: $media-xl) {
+					font-size: 20px;
+				}
 			}
 
 			img {
 				height: calc(100vh - ((80px * 2.2) + ($h-s + 30px) + (50px + 90px) + 50px + (10px + (20px * 1.2) + (24px * 2.4))));
+				@media (max-width: $media-xxl) {
+					height: calc(100vh - ((80px * 2.2) + ($h-s + 30px) + (50px + 90px) + 50px + (10px + (20px * 1.2) + (22px * 2.4))));
+				}
+				@media (max-width: $media-xl) {
+					height: calc(100vh - ((80px * 2.2) + ($h-s + 30px) + (50px + 90px) + 50px + (10px + (20px * 1.2) + (20px * 2.4))));
+				}
 			}
 		}
 	}
@@ -1109,7 +1251,9 @@ section {
 		padding: 1.5em 2em;
 		border: 1px solid $c-border;
 		display: inline-flex;
-
+		@media (max-width: $media-xxl) {
+			font-size: 24px;
+		}
 		&.fb-blue {
 			transition: opacity .5s ease-out, background-color .5s ease-out, border .5s ease-out, color .5s ease-out;
 			transition-delay: 3.5s, 5s, 5s, 5s;
@@ -1200,6 +1344,12 @@ section {
 			gap: 10px;
 			align-items: center;
 			cursor: pointer;
+			@media (max-width: $media-xxl) {
+				font-size: 22px;
+			}
+			@media (max-width: $media-xl) {
+				font-size: 20px;
+			}
 		}
 
 		.site {
@@ -1213,6 +1363,9 @@ section {
 				font-size: 30px;
 				text-transform: uppercase;
 				color: $c-white;
+				@media (max-width: $media-xxl) {
+					font-size: 24px;
+				}
 			}
 
 			.site-for {
@@ -1220,6 +1373,9 @@ section {
 				font-size: 20px;
 				text-transform: lowercase;
 				color: $c-gray;
+				@media (max-width: $media-xxl) {
+					font-size: 18px;
+				}
 			}
 
 			.img-cont {
@@ -1263,6 +1419,12 @@ section {
 		font-size: 24px;
 		color: $c-gray;
 		z-index: 5;
+		@media (max-width: $media-xxl) {
+			font-size: 22px;
+		}
+		@media (max-width: $media-xl) {
+			font-size: 20px;
+		}
 	}
 
 	.lp-sh {
@@ -1277,6 +1439,7 @@ section {
 		filter: blur(150px);
 		transition: all .5s ease-out;
 		transition-delay: 2s;
+
 		&.rate-anim-disabled {
 			background: #2c2c2c;
 		}
@@ -1316,6 +1479,7 @@ section {
 		transition: all .5s ease-out;
 		transition-delay: 2s;
 		opacity: 0;
+
 		&.rate-anim-disabled {
 			opacity: 1;
 		}
