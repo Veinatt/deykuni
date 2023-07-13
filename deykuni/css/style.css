@@ -1374,7 +1374,8 @@ header .my-dropdown .my-dropdown-menu {
 }
 
 #s7 .team-slider .swiper-slide img {
-  height: calc(100vh - 597.6px);
+  max-width: 100%;
+  max-height: calc(100vh - 597.6px);
 }
 
 #s8 {
@@ -1756,7 +1757,7 @@ header .my-dropdown .my-dropdown-menu {
   }
 
   #s7 .team-slider .swiper-slide img {
-    height: calc(100vh - 592.8px);
+    max-height: calc(100vh - 592.8px);
   }
 
   #s8 .fade-block {
@@ -1846,7 +1847,7 @@ header .my-dropdown .my-dropdown-menu {
   }
 
   #s7 .team-slider .swiper-slide img {
-    height: calc(100vh - 588px);
+    max-height: calc(100vh - 588px);
   }
 
   #s9 .sites-cont .load-more {

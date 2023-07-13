@@ -1195,12 +1195,13 @@ section {
 			}
 
 			img {
-				height: calc(100vh - ((80px * 2.2) + ($h-s + 30px) + (50px + 90px) + 50px + (10px + (20px * 1.2) + (24px * 2.4))));
+				max-width: 100%;
+				max-height: calc(100vh - ((80px * 2.2) + ($h-s + 30px) + (50px + 90px) + 50px + (10px + (20px * 1.2) + (24px * 2.4))));
 				@media (max-width: $media-xxl) {
-					height: calc(100vh - ((80px * 2.2) + ($h-s + 30px) + (50px + 90px) + 50px + (10px + (20px * 1.2) + (22px * 2.4))));
+					max-height: calc(100vh - ((80px * 2.2) + ($h-s + 30px) + (50px + 90px) + 50px + (10px + (20px * 1.2) + (22px * 2.4))));
 				}
 				@media (max-width: $media-xl) {
-					height: calc(100vh - ((80px * 2.2) + ($h-s + 30px) + (50px + 90px) + 50px + (10px + (20px * 1.2) + (20px * 2.4))));
+					max-height: calc(100vh - ((80px * 2.2) + ($h-s + 30px) + (50px + 90px) + 50px + (10px + (20px * 1.2) + (20px * 2.4))));
 				}
 			}
 		}
