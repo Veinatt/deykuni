@@ -36,6 +36,89 @@ function ready(fn) {
 }
 
 
+new fullpage('#fullpage', {
+  //options here
+  autoScrolling: true,
+  anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8', 'page9', 'page10'],
+  lockAnchors: true,
+  recordHistory: true,
+  afterLoad: function (origin, destination, direction) {
+    window.sessionStorage.setItem('fpsec', fullpage_api.getActiveSection().anchor)
+    if (document.querySelector('#s1').classList.contains('active')) {
+      document.querySelector('.header-cont').classList.remove('active')
+    } else {
+      document.querySelector('.header-cont').classList.add('active')
+    }
+    var url_ob = new URL(document.URL);
+    url_ob.hash = '#' + fullpage_api.getActiveSection().item.id + '';
+    var new_url = url_ob.href;
+    document.location.href = new_url;
+    if (fullpage_api.getActiveSection().anchor !== 'page3' && fullpage_api.getActiveSection().anchor !== 'page4' && fullpage_api.getActiveSection().anchor !== 'page5') {
+      fullpage_api.setAllowScrolling(true, 'all');
+      fullpage_api.setKeyboardScrolling(true, 'all');
+    }
+    if (fullpage_api.getActiveSection().anchor === 'page3') {
+      fullpage_api.setAllowScrolling(true, 'up');
+      fullpage_api.setKeyboardScrolling(true, 'up');
+      fullpage_api.setAllowScrolling(false, 'down');
+      fullpage_api.setKeyboardScrolling(false, 'down');
+    }
+    if (fullpage_api.getActiveSection().anchor === 'page4') {
+      fullpage_api.setAllowScrolling(false, 'up');
+      fullpage_api.setKeyboardScrolling(false, 'up');
+      fullpage_api.setAllowScrolling(false, 'down');
+      fullpage_api.setKeyboardScrolling(false, 'down');
+    }
+    if (fullpage_api.getActiveSection().anchor === 'page5') {
+      fullpage_api.setAllowScrolling(true, 'up');
+      fullpage_api.setKeyboardScrolling(true, 'up');
+      fullpage_api.setAllowScrolling(false, 'down');
+      fullpage_api.setKeyboardScrolling(false, 'down');
+    }
+    if (fullpage_api.getActiveSection().anchor === 'page5' && direction == 'down' && rate_anim === null) {
+      rate_anim = 'disabled'
+      window.sessionStorage.setItem('rate_anim', 'disabled')
+      enableRateAnim();
+      disableFullpage();
+      setTimeout(() => {
+        fullpage_api.setAllowScrolling(true, 'up');
+        fullpage_api.setKeyboardScrolling(true, 'up');
+      fullpage_api.setAllowScrolling(false, 'down');
+      fullpage_api.setKeyboardScrolling(false, 'down');
+      }, 5000);
+    }
+    if (fullpage_api.getActiveSection().anchor === 'page6' && direction == 'down' && point_anim === null) {
+      point_anim = 'disabled'
+      window.sessionStorage.setItem('point_anim', 'disabled')
+      enablePointAnim();
+      disableFullpage();
+    }
+    // if (fullpage_api.getActiveSection().anchor === 'page7' && direction == 'down' && slider_anim === null) {
+    //   slider_anim = 'disabled'
+    //   window.sessionStorage.setItem('slider_anim', 'disabled')
+    //   enableSliderAnim();
+    //   disableFullpage();
+    // }
+    if (fullpage_api.getActiveSection().anchor === 'page8' && direction == 'down' && fade_anim === null) {
+      fade_anim = 'disabled'
+      window.sessionStorage.setItem('fade_anim', 'disabled')
+      enableFadeAnim();
+      disableFullpageFade();
+    }
+    if (fullpage_api.getActiveSection().anchor === 'page9' && direction == 'down' && site_anim === null) {
+      site_anim = 'disabled'
+      window.sessionStorage.setItem('site_anim', 'disabled')
+      enableSiteAnim();
+      disableFullpage();
+    }
+    if (fullpage_api.getActiveSection().anchor === 'page10' && direction == 'down' && last_anim === null) {
+      site_anim = 'disabled'
+      window.sessionStorage.setItem('last_anim', 'disabled')
+      enableLastAnim();
+    }
+  },
+});
+console.clear()
 
 var btnDown = document.querySelector('#s1 .anchor-down');
 
@@ -292,89 +375,6 @@ const swiper = new Swiper('.swiper', {
   },
   spaceBetween: 20,
   slidesPerView: 4,
-});
-
-new fullpage('#fullpage', {
-  //options here
-  autoScrolling: true,
-  anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8', 'page9', 'page10'],
-  lockAnchors: true,
-  recordHistory: true,
-  afterLoad: function (origin, destination, direction) {
-    window.sessionStorage.setItem('fpsec', fullpage_api.getActiveSection().anchor)
-    if (document.querySelector('#s1').classList.contains('active')) {
-      document.querySelector('.header-cont').classList.remove('active')
-    } else {
-      document.querySelector('.header-cont').classList.add('active')
-    }
-    var url_ob = new URL(document.URL);
-    url_ob.hash = '#' + fullpage_api.getActiveSection().item.id + '';
-    var new_url = url_ob.href;
-    document.location.href = new_url;
-    if (fullpage_api.getActiveSection().anchor !== 'page3' && fullpage_api.getActiveSection().anchor !== 'page4' && fullpage_api.getActiveSection().anchor !== 'page5') {
-      fullpage_api.setAllowScrolling(true, 'all');
-      fullpage_api.setKeyboardScrolling(true, 'all');
-    }
-    if (fullpage_api.getActiveSection().anchor === 'page3') {
-      fullpage_api.setAllowScrolling(true, 'up');
-      fullpage_api.setKeyboardScrolling(true, 'up');
-      fullpage_api.setAllowScrolling(false, 'down');
-      fullpage_api.setKeyboardScrolling(false, 'down');
-    }
-    if (fullpage_api.getActiveSection().anchor === 'page4') {
-      fullpage_api.setAllowScrolling(false, 'up');
-      fullpage_api.setKeyboardScrolling(false, 'up');
-      fullpage_api.setAllowScrolling(false, 'down');
-      fullpage_api.setKeyboardScrolling(false, 'down');
-    }
-    if (fullpage_api.getActiveSection().anchor === 'page5') {
-      fullpage_api.setAllowScrolling(true, 'up');
-      fullpage_api.setKeyboardScrolling(true, 'up');
-      fullpage_api.setAllowScrolling(false, 'down');
-      fullpage_api.setKeyboardScrolling(false, 'down');
-    }
-    if (fullpage_api.getActiveSection().anchor === 'page5' && direction == 'down' && rate_anim === null) {
-      rate_anim = 'disabled'
-      window.sessionStorage.setItem('rate_anim', 'disabled')
-      enableRateAnim();
-      disableFullpage();
-      setTimeout(() => {
-        fullpage_api.setAllowScrolling(true, 'up');
-        fullpage_api.setKeyboardScrolling(true, 'up');
-      fullpage_api.setAllowScrolling(false, 'down');
-      fullpage_api.setKeyboardScrolling(false, 'down');
-      }, 5000);
-    }
-    if (fullpage_api.getActiveSection().anchor === 'page6' && direction == 'down' && point_anim === null) {
-      point_anim = 'disabled'
-      window.sessionStorage.setItem('point_anim', 'disabled')
-      enablePointAnim();
-      disableFullpage();
-    }
-    // if (fullpage_api.getActiveSection().anchor === 'page7' && direction == 'down' && slider_anim === null) {
-    //   slider_anim = 'disabled'
-    //   window.sessionStorage.setItem('slider_anim', 'disabled')
-    //   enableSliderAnim();
-    //   disableFullpage();
-    // }
-    if (fullpage_api.getActiveSection().anchor === 'page8' && direction == 'down' && fade_anim === null) {
-      fade_anim = 'disabled'
-      window.sessionStorage.setItem('fade_anim', 'disabled')
-      enableFadeAnim();
-      disableFullpageFade();
-    }
-    if (fullpage_api.getActiveSection().anchor === 'page9' && direction == 'down' && site_anim === null) {
-      site_anim = 'disabled'
-      window.sessionStorage.setItem('site_anim', 'disabled')
-      enableSiteAnim();
-      disableFullpage();
-    }
-    if (fullpage_api.getActiveSection().anchor === 'page10' && direction == 'down' && last_anim === null) {
-      site_anim = 'disabled'
-      window.sessionStorage.setItem('last_anim', 'disabled')
-      enableLastAnim();
-    }
-  },
 });
 
 

@@ -955,7 +955,6 @@ header .my-dropdown .my-dropdown-menu {
 }
 
 #s2 .acc-img.acc-trd-img svg:nth-child(2) {
-  right: 0;
   z-index: 1;
 }
 
@@ -965,7 +964,6 @@ header .my-dropdown .my-dropdown-menu {
 }
 
 #s2 .acc-img.acc-fth-img svg:nth-child(1) {
-  right: 0;
   z-index: 1;
 }
 
@@ -1637,11 +1635,15 @@ header .my-dropdown .my-dropdown-menu {
 
 @media (max-width: 1650px) {
   body {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .main-title {
     font-size: 60px;
+  }
+
+  .main-title {
+    font-size: 50px;
   }
 
   .cursor-last-page {
@@ -1678,6 +1680,11 @@ header .my-dropdown .my-dropdown-menu {
     bottom: -100px;
   }
 
+  #s2 .acc-img.acc-fst-img svg {
+    transform: scale(0.7);
+    bottom: -130px;
+  }
+
   #s2 .acc-img.acc-fst-img svg:nth-child(1) {
     right: 480px;
   }
@@ -1704,7 +1711,7 @@ header .my-dropdown .my-dropdown-menu {
   }
 
   #s2 .acc-img.acc-fst-img svg:nth-child(7) {
-    bottom: 20px;
+    bottom: -10px;
     right: 380px;
   }
 
@@ -1757,7 +1764,7 @@ header .my-dropdown .my-dropdown-menu {
   }
 
   #s7 .team-slider .swiper-slide img {
-    max-height: calc(100vh - 592.8px);
+    max-height: calc(100vh - 546.4px);
   }
 
   #s8 .fade-block {
@@ -1783,7 +1790,7 @@ header .my-dropdown .my-dropdown-menu {
 
 @media (max-width: 1400px) {
   body {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .cursor-last-page .svg-circle {
@@ -1792,7 +1799,7 @@ header .my-dropdown .my-dropdown-menu {
 
   .anchor-down,
   .anchor-up {
-    width: 80px;
+    width: 75px;
   }
 
   .modal-dialog .click-text {
@@ -1818,11 +1825,92 @@ header .my-dropdown .my-dropdown-menu {
   }
 
   #s1 .anchor-down {
-    width: 80px;
+    width: 75px;
   }
 
   #s1 .s1-cont .main-text {
-    font-size: 80px;
+    font-size: 70px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(1) {
+    right: 380px;
+    bottom: -150px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(2) {
+    right: 500px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(3) {
+    right: 110px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(4) {
+    right: 240px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(5) {
+    right: -40px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(6) {
+    bottom: -30px;
+    right: 540px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(7) {
+    bottom: 0px;
+    right: 350px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(8) {
+    right: -80px;
+    bottom: -140px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(9) {
+    right: -40px;
+  }
+
+  #s2 .acc-img.acc-fst-img svg:nth-child(10) {
+    right: 80px;
+  }
+
+  #s2 .acc-img.acc-snd-img svg {
+    transform: scale(0.7);
+    bottom: -140px;
+  }
+
+  #s2 .acc-img.acc-snd-img svg:nth-child(1) {
+    right: 220px;
+  }
+
+  #s2 .acc-img.acc-snd-img svg:nth-child(2) {
+    right: -100px;
+  }
+
+  #s2 .acc-img.acc-snd-img svg:nth-child(3) {
+    right: -100px;
+  }
+
+  #s2 .acc-img.acc-trd-img svg {
+    transform: scale(0.7);
+    bottom: -100px;
+    right: -100px;
+  }
+
+  #s2 .acc-img.acc-trd-img svg:nth-child(1) {
+    bottom: 280px;
+  }
+
+  #s2 .acc-img.acc-fth-img svg {
+    transform: scale(0.7);
+    bottom: -120px;
+    right: -100px;
+  }
+
+  #s2 .acc-img.acc-fth-img svg:nth-child(2) {
+    right: 130px;
   }
 
   .choose-sec .choose-cont .choose-left svg {
@@ -1842,15 +1930,27 @@ header .my-dropdown .my-dropdown-menu {
     font-size: 20px;
   }
 
+  #s7 .team-slider .swiper-slide .tm8-name {
+    font-size: 16px;
+  }
+
   #s7 .team-slider .swiper-slide .tm8-post {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   #s7 .team-slider .swiper-slide img {
-    max-height: calc(100vh - 588px);
+    max-height: calc(100vh - 512.4px);
+  }
+
+  #s8 .fade-block {
+    font-size: 20px;
   }
 
   #s9 .sites-cont .load-more {
+    font-size: 20px;
+  }
+
+  #s9 .sites-cont .site .title {
     font-size: 20px;
   }
 
