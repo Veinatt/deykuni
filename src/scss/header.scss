@@ -102,7 +102,9 @@ header {
 .modal-dialog {
     background-color: $c-black;
     padding: 100px;
-
+    @media (max-width: $media-xl) {
+        padding: 5 0px;
+    }
     .main-title {
         position: relative;
         margin-bottom: 20px;

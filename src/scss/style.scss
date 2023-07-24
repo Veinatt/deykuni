@@ -112,6 +112,7 @@ section {
 	@media (max-width: $media-xxl) {
 		font-size: 60px;
 	}
+
 	@media (max-width: $media-xxl) {
 		font-size: 50px;
 	}
@@ -256,6 +257,9 @@ section {
 	svg {
 		path {
 			fill: $c-white;
+		}
+		@media (max-width: $media-xl) {
+			transform: scale(.8);
 		}
 	}
 }
@@ -768,14 +772,16 @@ section {
 				&:nth-child(2) {
 					right: 0;
 					z-index: 2;
+
 					@media (max-width: $media-xl) {
-					right: -100px;
+						right: -100px;
 					}
 				}
 
 				&:nth-child(3) {
 					right: 0;
 					z-index: 1;
+
 					@media (max-width: $media-xl) {
 						right: -100px;
 					}
@@ -791,6 +797,7 @@ section {
 					right: -100px;
 				}
 			}
+
 			svg {
 				position: absolute;
 				bottom: 0;
@@ -799,6 +806,7 @@ section {
 					right: 250px;
 					bottom: 380px;
 					z-index: 2;
+
 					@media (max-width: $media-xl) {
 						bottom: 280px;
 					}
@@ -818,6 +826,7 @@ section {
 					right: -100px;
 				}
 			}
+
 			svg {
 				position: absolute;
 				bottom: 0;
@@ -829,6 +838,7 @@ section {
 				&:nth-child(2) {
 					right: 230px;
 					z-index: 2;
+
 					@media (max-width: $media-xl) {
 						right: 130px;
 					}
@@ -891,6 +901,9 @@ section {
 
 				@media (max-width: $media-xxl) {
 					font-size: 60px;
+				}
+				@media (max-width: $media-xl) {
+					font-size: 50px;
 				}
 			}
 
@@ -1108,6 +1121,7 @@ section {
 			cursor: pointer;
 			display: none;
 			width: calc((100% - 80px) / 3);
+			
 
 			.rate-cat-text {
 				margin-top: 5px;
@@ -1156,6 +1170,7 @@ section {
 	overflow: hidden;
 	padding-top: calc($h-s + 30px);
 	position: relative;
+	padding-bottom: 20px;
 
 	.anchor-down {
 		opacity: 1;
@@ -1204,7 +1219,11 @@ section {
 			padding: 40px;
 			flex-direction: column;
 			gap: 20px;
-
+			overflow-y: auto;
+			@media (max-width: $media-xl) {
+				padding: 30px;
+				gap: 15px;
+			}
 			.point-text {
 				font-family: $f-r;
 				font-size: 24px;
@@ -1214,7 +1233,7 @@ section {
 				}
 
 				@media (max-width: $media-xl) {
-					font-size: 20px;
+					font-size: 18px;
 				}
 			}
 
@@ -1226,7 +1245,9 @@ section {
 				@media (max-width: $media-xxl) {
 					font-size: 24px;
 				}
-
+				@media (max-width: $media-xl) {
+					font-size: 20px;
+				}
 				&::before {
 					content: '\2014';
 					margin-right: 10px;
@@ -1292,6 +1313,7 @@ section {
 				@media (max-width: $media-xxl) {
 					font-size: 18px;
 				}
+
 				@media (max-width: $media-xl) {
 					font-size: 16px;
 				}
@@ -1377,9 +1399,12 @@ section {
 		@media (max-width: $media-xxl) {
 			font-size: 24px;
 		}
+
 		@media (max-width: $media-xl) {
 			font-size: 20px;
+			padding: 1.3em 1.75em;
 		}
+
 		&.fb-blue {
 			transition: opacity .5s ease-out, background-color .5s ease-out, border .5s ease-out, color .5s ease-out;
 			transition-delay: 3.5s, 5s, 5s, 5s;
@@ -1495,6 +1520,7 @@ section {
 				@media (max-width: $media-xxl) {
 					font-size: 24px;
 				}
+
 				@media (max-width: $media-xl) {
 					font-size: 20px;
 				}

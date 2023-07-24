@@ -1240,6 +1240,7 @@ header .my-dropdown .my-dropdown-menu {
   overflow: hidden;
   padding-top: 140px;
   position: relative;
+  padding-bottom: 20px;
 }
 
 #s6 .anchor-down {
@@ -1289,6 +1290,7 @@ header .my-dropdown .my-dropdown-menu {
   padding: 40px;
   flex-direction: column;
   gap: 20px;
+  overflow-y: auto;
 }
 
 #s6 .point-cont .rate-point .point-text {
@@ -1802,6 +1804,15 @@ header .my-dropdown .my-dropdown-menu {
     width: 75px;
   }
 
+  .anchor-down svg,
+  .anchor-up svg {
+    transform: scale(0.8);
+  }
+
+  .modal-dialog {
+    padding: 50px;
+  }
+
   .modal-dialog .click-text {
     font-size: 20px;
   }
@@ -1913,6 +1924,10 @@ header .my-dropdown .my-dropdown-menu {
     right: 130px;
   }
 
+  .choose-sec .choose-cont .choose-left .choose-title {
+    font-size: 50px;
+  }
+
   .choose-sec .choose-cont .choose-left svg {
     aspect-ratio: 42/31;
     width: 35px;
@@ -1926,7 +1941,16 @@ header .my-dropdown .my-dropdown-menu {
     font-size: 20px;
   }
 
+  #s6 .point-cont .rate-point {
+    padding: 30px;
+    gap: 15px;
+  }
+
   #s6 .point-cont .rate-point .point-text {
+    font-size: 18px;
+  }
+
+  #s6 .point-cont .rate-point .point-title {
     font-size: 20px;
   }
 
@@ -1944,6 +1968,7 @@ header .my-dropdown .my-dropdown-menu {
 
   #s8 .fade-block {
     font-size: 20px;
+    padding: 1.3em 1.75em;
   }
 
   #s9 .sites-cont .load-more {
