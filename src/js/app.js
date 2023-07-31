@@ -148,7 +148,6 @@ if (window.matchMedia("(min-width: 1199px)").matches) {
   })
 }
 
-console.clear()
 
 var btnDown = document.querySelector('#s1 .anchor-down');
 
@@ -170,6 +169,7 @@ document.querySelectorAll('.cursor').forEach(cursor => {
     cursor.style.top = y + 'px';
   });
 });
+
 for (var i = 0; i < texts.length; i++) {
   let text = texts[i];
   let cursor = cursors[i];
@@ -507,6 +507,7 @@ for (var i = 0; i < btnsBlue.length; i++) {
   btnSvg.appendChild(svgPath)
   btnSvg.setAttribute('viewBox', `0 0 ${btnWidth * 2} ${btnHeight}`)
   btn.insertBefore(btnSvg, btn.firstChild)
+  console.log('amogus');
   btn.addEventListener('mousemove', (e) => {
     var rect = e.target.getBoundingClientRect();
     let left = e.clientX - rect.left;
